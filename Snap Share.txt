@@ -1,0 +1,50 @@
+Snap Share - Become Snapchat Famous
+The Snapchat Companion App
+
+User Logs In, associated with their snapchat handle.
+  DOING THINGS THAT DONT SCALE
+    Will verify by sending that user a verification code.
+    When a user attempts to register their snap username, they will have to wait a few minutes for a hand-sent auth code.
+    I will receive an email with the characters in a big font
+    I will then send them a snapchat with the auth code for them to log in with
+    We need a way for them to be able to try again, which shoots me a fresh auth code
+
+Now you can view the top snaps of the day, ordered by most likes. Super straight forward
+
+User {
+  snapUserName: String,
+  snapCode: image/pointer,
+  dateJoined: Date,
+  verified: Bool
+}
+
+Video {
+  user: ID,
+  posted: [Date],
+  video: pointer,
+  likes: Number,
+  views: Number,
+  reported: Number
+}
+
+So we're taking advantage of being able to download your snap story.
+  We have to come up with a cleaner solution than what I have so far due to overlap.
+  New Day starts at 5AM (but if you have a snap from 8PM last night, it will be in your upload, need a fix)
+  Upload that video, it will replace the current day's video
+  Video will be stored somewhere in AWS or something
+
+
+You can also view user pages, which will simply have a snap code (we have to figure that out, username for now).
+
+Can we parse the snapchat qr codes? -> probably not
+Will have to log in via snapchat until we have exclusive access. We neeeeeed Gary.
+
+Get 100 users minimum using it regularly.
+
+
+
+
+
+DRock, I sent this Snapchat discovery app I built to Gary, but I want you to try it out. It will blow you away. Tell Gary I'm ready to crush it and want a 10 minute meeting with him to rapidly expand if he's interested.
+
+MVP built by 2/7, in apple store by 2/14, expand starting there.
