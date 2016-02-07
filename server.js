@@ -8,25 +8,29 @@
     3) User authentication
 
 */
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var path = require('path');
 
-var port = process.env.PORT || 8000;
-app.use(bodyParser.json());
 
 require('dotenv').load();
 
-var apiKey = process.env.API_KEY || 'Token apikey';
+var port = process.env.PORT || 8000;
+var apiKey = process.env.API_KEY;
 
-// controllers
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'client')))
+
+
+// Controllers
 var userController = require('./controllers/userController');
 var videoController = require('./controllers/videoController');
 
 var mongoUri = process.env.MONGO_URI || 'mongodb://localhost:12345/snapshare';
 mongoose.connect(mongoUri);
-
 
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
@@ -34,13 +38,17 @@ mongoose.connection.on('error', function() {
 });
 
 // Verify API token
-app.use('/', function(req, res, next) {
-  var attemptedKey = req.headers.authorization;
-  if (attemptedKey === apiKey) {
-    next();
-  } else {
-    res.status(401).send("Incorrect API Key");
-  }
+// app.use('/', function(req, res, next) {
+//   var attemptedKey = req.headers.authorization;
+//   if (attemptedKey === apiKey) {
+//     next();
+//   } else {
+//     res.status(401).send("Incorrect API Key");
+//   }
+// });
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/index.html'));
 });
 
 // User management
