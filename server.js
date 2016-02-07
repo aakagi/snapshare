@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'client')))
 var userController = require('./controllers/userController');
 var videoController = require('./controllers/videoController');
 
-var mongoUri = process.env.MONGO_URI || 'mongodb://localhost:12345/snapshare';
+var mongoUri = process.env.MONGO_URI || 'mongodb://localhost/snapshare';
 mongoose.connect(mongoUri);
 
 mongoose.connection.on('error', function() {
