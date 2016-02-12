@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SnapShare
 //
-//  Created by Alexander Akagi on 2/6/16.
+//  Created by Alexander Akagi on 2/11/16.
 //  Copyright © 2016 Alexander Akagi. All rights reserved.
 //
 

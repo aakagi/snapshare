@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6D677661C67044000A04118"
+               BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
                BuildableName = "SnapShare.app"
                BlueprintName = "SnapShare"
                ReferencedContainer = "container:SnapShare.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6D677661C67044000A04118"
+            BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
             BuildableName = "SnapShare.app"
             BlueprintName = "SnapShare"
             ReferencedContainer = "container:SnapShare.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6D677661C67044000A04118"
+            BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
             BuildableName = "SnapShare.app"
             BlueprintName = "SnapShare"
             ReferencedContainer = "container:SnapShare.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6D677661C67044000A04118"
+            BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
             BuildableName = "SnapShare.app"
             BlueprintName = "SnapShare"
             ReferencedContainer = "container:SnapShare.xcodeproj">
