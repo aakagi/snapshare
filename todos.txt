@@ -1,0 +1,24 @@
+Comprehensive Todo List In Order to Finish By 2/19
+-----------------------
+
+- Upload a snapchat video file to my personal URL for testing
+- Finish the mp3 tutorial that's up on youtube for the audio AVPlayer
+- Get my temporary video to appear on iOS (replace audio with video)
+- Figure out how to change the default AVPlayer
+- Make one tweak to the AVPlayer to get comfortable with it
+- Watch lecture 9 and 10 to understand scroll view and table view
+- Figure out how to make a table view with multiple videos to scroll thorugh
+- Make sure that the videos all play stuff
+- Make an http request to my server and get a dummy response
+- Get that response to appear on the frontend
+- Set up an aws bucket
+- Set up aws cloudfront and understand how to minimize required requests
+- Really get a deep understanding of how to paginate results and cache highly used videos
+- Upload a snapchat story video to my aws server with http
+- Make sure that I never get charged for AWS
+- Make an error message juuuust in case for if I get too many requests in the future
+
+GET HERE BY THE END OF TREEHACKS
+
+- 
+

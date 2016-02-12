@@ -103,12 +103,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x34-Yk-vpj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x34-Yk-vpj">
                                 <rect key="frame" x="285" y="285" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="185-B9-BiO">
+                                <rect key="frame" x="267" y="323" width="66" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="NjB-wZ-qYQ"/>
+                                </constraints>
+                                <state key="normal" title="+3"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="185-B9-BiO" firstAttribute="top" secondItem="x34-Yk-vpj" secondAttribute="bottom" constant="8" symbolic="YES" id="AIb-BM-Xbb"/>
+                            <constraint firstItem="185-B9-BiO" firstAttribute="centerX" secondItem="x34-Yk-vpj" secondAttribute="centerX" id="Iew-bc-0l7"/>
+                            <constraint firstItem="lNo-Pt-X26" firstAttribute="top" secondItem="185-B9-BiO" secondAttribute="bottom" constant="246" id="NUq-AF-QE8"/>
+                            <constraint firstItem="x34-Yk-vpj" firstAttribute="centerY" secondItem="NCd-zM-j21" secondAttribute="centerY" id="tdd-bg-fXt"/>
+                            <constraint firstItem="x34-Yk-vpj" firstAttribute="centerX" secondItem="NCd-zM-j21" secondAttribute="centerX" id="yCo-Ch-Tge"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playToggle" destination="x34-Yk-vpj" id="LgJ-EZ-FLS"/>
