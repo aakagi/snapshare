@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SnapShare/EachVideoTableViewCell.swift"
-            timestampString = "477130231.522263"
+            timestampString = "477164826.99199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "updateUI()"
             landmarkType = "5">
          </BreakpointContent>

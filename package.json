@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/.bin/jasmine spec",
-    "run": "nodemon server.js",
+    "go": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "akagi",

@@ -53,13 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-jZ-pe2">
-                                <rect key="frame" x="281" y="285" width="39" height="30"/>
-                                <state key="normal" title="Temp"/>
-                                <connections>
-                                    <segue destination="HR2-P0-X2T" kind="presentation" id="I9J-gT-Gnd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUg-FU-FCV">
                                 <rect key="frame" x="265" y="369" width="70" height="30"/>
                                 <state key="normal" title="TableView"/>
@@ -70,16 +63,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yUg-FU-FCV" firstAttribute="top" secondItem="Y7a-jZ-pe2" secondAttribute="bottom" constant="8" id="G8K-dh-VV0"/>
-                            <constraint firstItem="Y7a-jZ-pe2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCj-rs-t0T"/>
                             <constraint firstItem="yUg-FU-FCV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lt6-9M-7Im"/>
                             <constraint firstItem="yUg-FU-FCV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="305" id="ohh-IM-ax3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yUg-FU-FCV" secondAttribute="bottom" constant="157" id="q7A-ye-Xpb"/>
-                            <constraint firstItem="Y7a-jZ-pe2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sBp-sv-XQ3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="G8K-dh-VV0"/>
                                 <exclude reference="ohh-IM-ax3"/>
                             </mask>
                         </variation>
@@ -137,11 +126,31 @@
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYe-Po-2MJ">
+                                                    <rect key="frame" x="323" y="183" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="vfz-K3-v6A"/>
+                                                    </constraints>
+                                                    <state key="normal" title="+3">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rK-Eg-ZS4">
+                                                    <rect key="frame" x="215" y="183" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="yeX-JQ-otH"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Temp">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.66982199315086433" green="0.77208769633507857" blue="0.65256403792754769" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="6QR-HF-O7U" firstAttribute="centerX" secondItem="lou-Zt-itv" secondAttribute="centerX" id="6Zt-h8-kk3"/>
+                                                <constraint firstItem="fYe-Po-2MJ" firstAttribute="leading" secondItem="6QR-HF-O7U" secondAttribute="trailing" constant="8" id="7D8-N2-t54"/>
                                                 <constraint firstItem="6QR-HF-O7U" firstAttribute="top" secondItem="lou-Zt-itv" secondAttribute="top" constant="20" symbolic="YES" id="CUg-dP-bbD"/>
+                                                <constraint firstItem="6QR-HF-O7U" firstAttribute="leading" secondItem="1rK-Eg-ZS4" secondAttribute="trailing" constant="8" id="DKQ-4B-ezR"/>
                                                 <constraint firstItem="6QR-HF-O7U" firstAttribute="leading" secondItem="lou-Zt-itv" secondAttribute="leading" constant="20" symbolic="YES" id="InN-pB-Rbx"/>
                                                 <constraint firstAttribute="bottom" secondItem="6QR-HF-O7U" secondAttribute="bottom" constant="36" id="chT-CD-sxZ"/>
                                                 <constraint firstItem="6QR-HF-O7U" firstAttribute="centerX" secondItem="lou-Zt-itv" secondAttribute="centerX" id="e8U-aR-V9H"/>
@@ -161,6 +170,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fYe-Po-2MJ" secondAttribute="bottom" constant="8" id="8zS-dg-ehI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1rK-Eg-ZS4" secondAttribute="bottom" constant="8" id="Ahz-Hz-Iaa"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="lou-Zt-itv" secondAttribute="bottom" id="Sos-BA-E92"/>
                                         <constraint firstItem="lou-Zt-itv" firstAttribute="leading" secondItem="qk8-Gz-gZf" secondAttribute="leadingMargin" id="aor-OF-cBV"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="6QR-HF-O7U" secondAttribute="bottom" constant="8" id="kHo-GG-mOW"/>
@@ -170,6 +181,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="playToggle" destination="6QR-HF-O7U" id="Awo-5S-V79"/>
+                                    <outlet property="plusThree" destination="fYe-Po-2MJ" id="hss-XW-hEe"/>
+                                    <outlet property="tempButton" destination="1rK-Eg-ZS4" id="Z8Y-t8-FNg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -182,47 +195,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhV-0n-rfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1134" y="589"/>
-        </scene>
-        <!--Temp View Controller-->
-        <scene sceneID="clm-Xl-rMM">
-            <objects>
-                <viewController id="HR2-P0-X2T" customClass="TempViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zXo-S3-Py7"/>
-                        <viewControllerLayoutGuide type="bottom" id="lNo-Pt-X26"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NCd-zM-j21">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x34-Yk-vpj">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
-                                <state key="normal" title="Play"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="185-B9-BiO">
-                                <rect key="frame" x="267" y="323" width="66" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="NjB-wZ-qYQ"/>
-                                </constraints>
-                                <state key="normal" title="+3"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="185-B9-BiO" firstAttribute="top" secondItem="x34-Yk-vpj" secondAttribute="bottom" constant="8" symbolic="YES" id="AIb-BM-Xbb"/>
-                            <constraint firstItem="185-B9-BiO" firstAttribute="centerX" secondItem="x34-Yk-vpj" secondAttribute="centerX" id="Iew-bc-0l7"/>
-                            <constraint firstItem="lNo-Pt-X26" firstAttribute="top" secondItem="185-B9-BiO" secondAttribute="bottom" constant="246" id="NUq-AF-QE8"/>
-                            <constraint firstItem="x34-Yk-vpj" firstAttribute="centerY" secondItem="NCd-zM-j21" secondAttribute="centerY" id="tdd-bg-fXt"/>
-                            <constraint firstItem="x34-Yk-vpj" firstAttribute="centerX" secondItem="NCd-zM-j21" secondAttribute="centerX" id="yCo-Ch-Tge"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="playToggle" destination="x34-Yk-vpj" id="LgJ-EZ-FLS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NNs-30-dvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1148" y="-109"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="34G-a2-cNx">

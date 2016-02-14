@@ -51,6 +51,10 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
 
+app.get('/test', function(req, res) {
+  res.send("did it work?");
+})
+
 // User management
 app.post('/user/login', userController.login); // login & for account creation
 app.post('/user/auth', userController.auth); // auth password

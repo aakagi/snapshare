@@ -21,38 +21,25 @@ class EachVideoTableViewCell: UITableViewCell {
     var player: AVPlayer?
     var playerLayer: AVPlayerLayer?
     
-//    var testButton: UIButton?
-    
     @IBOutlet weak var playToggle: UIButton!
+    @IBOutlet weak var plusThree: UIButton!
+    @IBOutlet weak var tempButton: UIButton!
     
     func updateUI() {
         
         let url = video!
         playerItem = AVPlayerItem(URL: url)
         player = AVPlayer(playerItem: playerItem!)
-        
         playerLayer = AVPlayerLayer(player: player!)
-        
-        print(player!)
-        
         
         playerLayer!.frame = CGRectMake(0,0,self.frame.width,self.frame.height)
         self.layer.addSublayer(playerLayer!)
         
-//        let button   = UIButton(type: UIButtonType.System) as UIButton
-//        button.frame = CGRectMake(100, 100, 100, 50)
-//        button.setTitle("Test Button", forState: UIControlState.Normal)
-//        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-//        
-//        self.addSubview(button)
-        
-        
-//        let tempRect = CGRect(x: 0, y: 0, width: 50, height: 50)
-//        testButton = UIButton(frame: tempRect)
-//        testButton?.setTitle("ayeee", forState: UIControlState.Normal)
-//        testButton?.backgroundColor = UIColor.redColor()
-        
         playToggle.addTarget(self, action: "playButtonTapped:", forControlEvents: .TouchUpInside)
+        
+        plusThree.addTarget(self, action: "ffThreeSeconds:", forControlEvents: .TouchUpInside)
+        
+        tempButton.addTarget(self, action: "httpReq:", forControlEvents: .TouchUpInside)
         
     }
     
@@ -60,12 +47,30 @@ class EachVideoTableViewCell: UITableViewCell {
         if player?.rate == 0 {
             player!.play()
             playToggle.setTitle("Pause", forState: UIControlState.Normal)
-            print(video)
         }
         else {
             player!.pause()
             playToggle.setTitle("Play", forState: UIControlState.Normal)
         }
     }
+    
+    // THIS FUNCTION BARELY WORKS - YOU CAN'T SPAM THE +3 BUTTON, ALSO SHOULD BE MORE OO
+    func ffThreeSeconds(sender: AnyObject) {
+        let addTime = CMTimeMake(3, 1)
+        player!.seekToTime(player!.currentTime() + addTime)
+    }
+    
+    func httpReq(sender: AnyObject) {
+        let url = NSURL(string: "http://localhost:8000/test")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        }
+        
+        task.resume()
+    }
+    
+    
+    
     
 }
