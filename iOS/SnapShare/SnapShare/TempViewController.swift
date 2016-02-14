@@ -13,6 +13,7 @@ class TempViewController: UIViewController {
     
     var playerItem: AVPlayerItem?
     var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
 
     @IBOutlet weak var playToggle: UIButton!
     
@@ -21,15 +22,16 @@ class TempViewController: UIViewController {
         
 //        let url = NSURL(string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3")
         
-        let url = NSURL(string: "http://www.akagi.co/video/snapstory.m4v")
+        
+        
+        let url = NSURL(string: "http://www.akagi.co/video/snapstory1.m4v")
         
         playerItem = AVPlayerItem(URL: url!)
         player = AVPlayer(playerItem: playerItem!)
         
-        let playerLayer = AVPlayerLayer(player: player!)
-        playerLayer.frame = CGRectMake(0,50,self.view.frame.size.width,200)
-        self.view.layer.addSublayer(playerLayer)
-        
+        playerLayer = AVPlayerLayer(player: player!)
+        playerLayer!.frame = CGRectMake(0,50,self.view.frame.size.width,200)
+        self.view.layer.addSublayer(playerLayer!)
         playToggle.addTarget(self, action: "playButtonTapped:", forControlEvents: .TouchUpInside)
     }
     

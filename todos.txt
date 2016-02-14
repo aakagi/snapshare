@@ -1,24 +1,74 @@
 Comprehensive Todo List In Order to Finish By 2/19
 -----------------------
 
-- Upload a snapchat video file to my personal URL for testing
-- Finish the mp3 tutorial that's up on youtube for the audio AVPlayer
-- Get my temporary video to appear on iOS (replace audio with video)
-- Figure out how to change the default AVPlayer
-- Make one tweak to the AVPlayer to get comfortable with it
-- Watch lecture 9 and 10 to understand scroll view and table view
-- Figure out how to make a table view with multiple videos to scroll thorugh
-- Make sure that the videos all play stuff
+2/12-13
+  + Upload two snapchat video files to my personal URL for testing
+      http://www.akagi.co/video/snapstory1.m4v
+      http://www.akagi.co/video/snapstory2.m4v
+  + Finish the mp3 tutorial that's up on youtube for the audio AVPlayer
+  + Get my temporary video to appear on iOS (replace audio with video)
+  + Figure out how to change the default AVPlayer
+  + Watch lecture 9 and 10 to understand scroll view and table view
+  + Build a table view with video players in each cell
+  + Take in 2 http requests in an array and generate two cells
+
+
+
+
+
+
+2/14
+- Build skip forward 3 seconds button
 - Make an http request to my server and get a dummy response
 - Get that response to appear on the frontend
-- Set up an aws bucket
+- Upload my two snapchaat m4v files to AWS using their API
+- Get those videos using cloudfront
+- Look at the stanford Twitter controller/models and:
+  - https://github.com/palewar/CS193P/blob/master/Smashtag/Smashtag/Twitter/Tweet.swift
+  - Build User model in Swift
+  - Build Video model in Swift
+  - Build User controller in Swift
+  - Build Video controller in Swift
+- Send http request to mock uploading something to AWS using the API as part of the route.
+
+
+GET HERE BY THE END OF TREEHACKS
+
+
+
+
+
+2/15
+- Figure out video picker/upload
+
 - Set up aws cloudfront and understand how to minimize required requests
 - Really get a deep understanding of how to paginate results and cache highly used videos
 - Upload a snapchat story video to my aws server with http
 - Make sure that I never get charged for AWS
 - Make an error message juuuust in case for if I get too many requests in the future
 
-GET HERE BY THE END OF TREEHACKS
+- Eliminate 95% of storyboard other than controllers
 
-- 
+
+2/16
+
+2/17
+
+2/18
+
+2/19
+- Make the UI interactions really nice
+
+2/20
+- Have polished product by end of day
+
+After launch
+- Analytics
+- API edge case handling
+
+
+
+
+
+
 
