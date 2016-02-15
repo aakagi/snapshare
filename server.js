@@ -58,6 +58,8 @@ app.get('/test', function(req, res) {
   });
 })
 
+app.post('/user/test', userController.test);
+
 // User management
 app.post('/user/login', userController.login); // login & for account creation
 app.post('/user/auth', userController.auth); // auth password

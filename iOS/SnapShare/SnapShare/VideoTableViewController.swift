@@ -19,6 +19,16 @@ class VideoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
+//        
+//        if userDefaults.objectForKey("userLoggedIn") == nil {
+//            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let LoginVC: UIViewController = Storyboard.instantiateViewControllerWithIdentifier("LoginVC")
+//            self.presentViewController(LoginVC, animated: true, completion: nil)
+//            
+//        }
+
+        
         //let request = VideoRequest(count: 10ish)
         //request.fetchStuff { closure function
         //dispatch_async(dispatch_get_main_queue()) {} async load the videos

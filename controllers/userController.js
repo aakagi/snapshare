@@ -110,5 +110,10 @@ module.exports = {
         res.status(500).send(err);
       }
     });
+  },
+  test: function(req, res) {
+    console.log(req);
+    res.send("received");
   }
+
 }

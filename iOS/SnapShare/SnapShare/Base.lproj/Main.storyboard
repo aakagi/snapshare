@@ -10,7 +10,7 @@
         <!--User Sign In View Controller-->
         <scene sceneID="8Aw-ok-cKM">
             <objects>
-                <viewController id="eNO-56-HRX" customClass="UserSignInViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="eNO-56-HRX" customClass="UserSignInViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l2j-Rv-sIi"/>
                         <viewControllerLayoutGuide type="bottom" id="foM-1d-Igj"/>
