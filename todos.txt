@@ -1,74 +1,59 @@
 Comprehensive Todo List In Order to Finish By 2/19
 -----------------------
 
-2/12-13
-  + Upload two snapchat video files to my personal URL for testing
-      http://www.akagi.co/video/snapstory1.m4v
-      http://www.akagi.co/video/snapstory2.m4v
-  + Finish the mp3 tutorial that's up on youtube for the audio AVPlayer
-  + Get my temporary video to appear on iOS (replace audio with video)
-  + Figure out how to change the default AVPlayer
-  + Watch lecture 9 and 10 to understand scroll view and table view
-  + Build a table view with video players in each cell
-  + Take in 2 http requests in an array and generate two cells
-
-
-
-
-
-
-2/14
-- Build skip forward 3 seconds button
-- Make an http request to my server and get a dummy response
-- Get that response to appear on the frontend
-- Upload my two snapchaat m4v files to AWS using their API
-- Get those videos using cloudfront
-- Look at the stanford Twitter controller/models and:
-  - https://github.com/palewar/CS193P/blob/master/Smashtag/Smashtag/Twitter/Tweet.swift
-  - Build User model in Swift
-  - Build Video model in Swift
-  - Build User controller in Swift
-  - Build Video controller in Swift
-- Send http request to mock uploading something to AWS using the API as part of the route.
-
-
-GET HERE BY THE END OF TREEHACKS
-
-
-
-
 
 2/15
-- Figure out video picker/upload
+- Connect shit together!
+  - Manually upload two of the snapchat videos to S3
+  - Get urls for videos
+  - Manually insert that video url & object to mongodb
+  - GET that data from iOS
+  - Copy the stanford Twitter controller/models
+    - https://github.com/palewar/CS193P/blob/master/Smashtag/Smashtag/Twitter/Tweet.swift
+  - Parse the JSON response to grab:
+    - snapname, plays, likes, url
+  - Generate video data on main layout as simple text for each cell
 
-- Set up aws cloudfront and understand how to minimize required requests
-- Really get a deep understanding of how to paginate results and cache highly used videos
-- Upload a snapchat story video to my aws server with http
-- Make sure that I never get charged for AWS
-- Make an error message juuuust in case for if I get too many requests in the future
 
-- Eliminate 95% of storyboard other than controllers
+- Build functional layout ignoring custom avplayer
 
 
 2/16
+- Build users page
+
+- Build custom video player
+
 
 2/17
 
+- Build video upload
+
+- Build settings page
+
+
 2/18
 
+- Optimize S3 requests with cloudfront
+
+- Get server to MVP
+
+
 2/19
-- Make the UI interactions really nice
+
+- Push notifications
+
+- Collect Assets
+
 
 2/20
+
 - Have polished product by end of day
 
+- Submit to App store?
+
+
 After launch
-- Analytics
+- Analytics & CRUD webview
 - API edge case handling
-
-
-
-
-
-
+- Marketing strats
 
