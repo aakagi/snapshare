@@ -10,4 +10,5 @@ import Foundation
 
 struct ApiKeys {
     let test = "testinggg"
+    let test2 = "test2"
 }
