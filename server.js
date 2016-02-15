@@ -52,7 +52,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/test', function(req, res) {
-  res.send("did it work?");
+  res.send({
+    url: "http://www.akagi.co/video/snapstory1.m4v",
+    user: "Alex"
+  });
 })
 
 // User management

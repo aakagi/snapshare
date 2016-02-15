@@ -17,6 +17,7 @@
 		D60F4A221C6EEA9F005C80CD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F4A211C6EEA9F005C80CD /* Video.swift */; };
 		D60F4A251C6EF1F6005C80CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F4A241C6EF1F6005C80CD /* User.swift */; };
 		D60F4A271C6F0D42005C80CD /* EachVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */; };
+		D61205691C71747D006B7058 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61205681C71747D006B7058 /* UserSignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D60F4A211C6EEA9F005C80CD /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D60F4A241C6EF1F6005C80CD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EachVideoTableViewCell.swift; sourceTree = "<group>"; };
+		D61205681C71747D006B7058 /* UserSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D60F4A1B1C6DB52A005C80CD /* ProfileViewController.swift */,
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
 				D60F49ED1C6D7601005C80CD /* Main.storyboard */,
+				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
 				D60F4A211C6EEA9F005C80CD /* Video.swift */,
 				D60F4A241C6EF1F6005C80CD /* User.swift */,
 				D60F4A1F1C6EE9CA005C80CD /* VideoTableViewController.swift */,
@@ -158,6 +161,7 @@
 				D60F49EC1C6D7601005C80CD /* VideoListViewController.swift in Sources */,
 				D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */,
 				D60F4A251C6EF1F6005C80CD /* User.swift in Sources */,
+				D61205691C71747D006B7058 /* UserSignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

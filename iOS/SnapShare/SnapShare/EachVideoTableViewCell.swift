@@ -63,11 +63,30 @@ class EachVideoTableViewCell: UITableViewCell {
     func httpReq(sender: AnyObject) {
         let url = NSURL(string: "http://localhost:8000/test")
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, res, err) in
+            
+            if data != nil {
+//                print(String(data: data!, encoding: NSUTF8StringEncoding)!)
+                
+                
+//                let jsonRes: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                
+                
+//                print("AsSynchronous\(jsonRes)")
+            }
+            
+            if res != nil {
+                print(res!)
+            }
+            
         }
         
         task.resume()
+        
+        
+        
+        
+        
     }
     
     
