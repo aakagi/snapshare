@@ -18,6 +18,7 @@
 		D60F4A251C6EF1F6005C80CD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F4A241C6EF1F6005C80CD /* User.swift */; };
 		D60F4A271C6F0D42005C80CD /* EachVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */; };
 		D61205691C71747D006B7058 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61205681C71747D006B7058 /* UserSignInViewController.swift */; };
+		D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D60F4A241C6EF1F6005C80CD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EachVideoTableViewCell.swift; sourceTree = "<group>"; };
 		D61205681C71747D006B7058 /* UserSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
+		D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +68,29 @@
 		D60F49E81C6D7601005C80CD /* SnapShare */ = {
 			isa = PBXGroup;
 			children = (
-				D60F49E91C6D7601005C80CD /* AppDelegate.swift */,
-				D60F49EB1C6D7601005C80CD /* VideoListViewController.swift */,
-				D60F4A1B1C6DB52A005C80CD /* ProfileViewController.swift */,
+				D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */,
+				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
 				D60F49ED1C6D7601005C80CD /* Main.storyboard */,
-				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
-				D60F4A211C6EEA9F005C80CD /* Video.swift */,
-				D60F4A241C6EF1F6005C80CD /* User.swift */,
 				D60F4A1F1C6EE9CA005C80CD /* VideoTableViewController.swift */,
-				D60F49F01C6D7601005C80CD /* Assets.xcassets */,
-				D60F49F21C6D7601005C80CD /* LaunchScreen.storyboard */,
-				D60F49F51C6D7601005C80CD /* Info.plist */,
+				D612056C1C71B0DB006B7058 /* Hide */,
 			);
 			path = SnapShare;
+			sourceTree = "<group>";
+		};
+		D612056C1C71B0DB006B7058 /* Hide */ = {
+			isa = PBXGroup;
+			children = (
+				D60F49EB1C6D7601005C80CD /* VideoListViewController.swift */,
+				D60F4A1B1C6DB52A005C80CD /* ProfileViewController.swift */,
+				D60F4A241C6EF1F6005C80CD /* User.swift */,
+				D60F4A211C6EEA9F005C80CD /* Video.swift */,
+				D60F49F01C6D7601005C80CD /* Assets.xcassets */,
+				D60F49F21C6D7601005C80CD /* LaunchScreen.storyboard */,
+				D60F49E91C6D7601005C80CD /* AppDelegate.swift */,
+				D60F49F51C6D7601005C80CD /* Info.plist */,
+			);
+			name = Hide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				D60F4A1C1C6DB52A005C80CD /* ProfileViewController.swift in Sources */,
 				D60F4A221C6EEA9F005C80CD /* Video.swift in Sources */,
 				D60F49EC1C6D7601005C80CD /* VideoListViewController.swift in Sources */,
+				D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */,
 				D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */,
 				D60F4A251C6EF1F6005C80CD /* User.swift in Sources */,
 				D61205691C71747D006B7058 /* UserSignInViewController.swift in Sources */,

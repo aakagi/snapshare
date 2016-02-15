@@ -32,7 +32,7 @@ class EachVideoTableViewCell: UITableViewCell {
         player = AVPlayer(playerItem: playerItem!)
         playerLayer = AVPlayerLayer(player: player!)
         
-        playerLayer!.frame = CGRectMake(0,0,self.frame.width,self.frame.height)
+        playerLayer!.frame = CGRectMake(0,20,self.frame.width,self.frame.height / 1.6)
         self.layer.addSublayer(playerLayer!)
         
         playToggle.addTarget(self, action: "playButtonTapped:", forControlEvents: .TouchUpInside)

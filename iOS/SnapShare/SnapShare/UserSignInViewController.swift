@@ -36,9 +36,9 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
             sendSnap(userNameInputField.text!)
             
             // Manual Storyboard Segue
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let codeVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("CodeVC")
-            self.presentViewController(codeVC, animated: true, completion: nil)
+            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let CodeVC: UIViewController = Storyboard.instantiateViewControllerWithIdentifier("CodeVC")
+            self.presentViewController(CodeVC, animated: true, completion: nil)
         }
         else {
             //send error
@@ -49,8 +49,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
     
     // TODO - should also be called from different class
     func sendSnap(snapname: String) {
-        print(snapname)
-        print("sending snapchat auth code - todo")
+        print("Sending snap of auth code to \(snapname) - todo")
     }
     
     override func didReceiveMemoryWarning() {

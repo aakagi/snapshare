@@ -24,7 +24,7 @@ class VideoTableViewController: UITableViewController {
         //dispatch_async(dispatch_get_main_queue()) {} async load the videos
         //}
         
-        videos.insert([NSURL(string: "http://www.akagi.co/video/snapstory1.m4v")!,NSURL(string: "http://www.akagi.co/video/snapstory2.m4v")!], atIndex: 0)
+        videos.insert([NSURL(string: "http://www.akagi.co/video/snapstory1.m4v")!,NSURL(string: "http://www.akagi.co/video/snapstory2.m4v")!,NSURL(string: "http://www.akagi.co/video/snapstory1.m4v")!,NSURL(string: "http://www.akagi.co/video/snapstory2.m4v")!], atIndex: 0)
     }
     
     override func didReceiveMemoryWarning() {
