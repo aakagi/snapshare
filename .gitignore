@@ -1,5 +1,4 @@
 node_modules
 .env
 npm-debug.log
-iOS
-gulpfile.js
+iOS/SnapShare/SnapShare/ApiKeys.swift
