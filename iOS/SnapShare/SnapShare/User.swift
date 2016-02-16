@@ -9,9 +9,12 @@
 import Foundation
 
 struct User {
+    static var accessToken: String?
+    static var checkUserId: String?
     let name: String
     let username: String
     let password: String
+    
     
     static func login(username: String, password: String) -> User?{
         if let user = database[username] {

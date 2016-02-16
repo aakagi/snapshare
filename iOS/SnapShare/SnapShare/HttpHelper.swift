@@ -34,38 +34,41 @@ struct HttpHelper {
         return request
     }
     
+    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String:AnyObject]
+                return json
+            } catch {
+                print("Something went wrong")
+            }
+        }
+        return nil
+    }
+    
 
 //    func sendRequest(request: NSURLRequest, completion:(NSData!, NSError!) -> Void) -> () {
 //        // Create a NSURLSession task
 //        let session = NSURLSession.sharedSession()
-//        let task = session.dataTaskWithRequest(request) { (data: NSData!, response: NSURLResponse!, error: NSError!) in
-//            if error != nil {
+//        let task = session.dataTaskWithRequest(request) {(data, res, err) in
+//            
+//            if err != nil {
 //                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    completion(data, error)
+//                    
 //                })
 //                
 //                return
 //            }
 //            
 //            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                if let httpResponse = response as? NSHTTPURLResponse {
-//                    if httpResponse.statusCode == 200 {
-//                        completion(data, nil)
-//                    } else {
-//                        var jsonerror:NSError?
-//                        if let errorDict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror) as? NSDictionary {
-//                            let responseError : NSError = NSError(domain: "HTTPHelperError", code: httpResponse.statusCode, userInfo: errorDict as? [NSObject : AnyObject])
-//                            completion(data, responseError)
-//                        }
-//                    }
-//                }
+//                completion(data, nil)
 //            })
+////            if data != nil {
+////                print(String(data: data!, encoding: NSUTF8StringEncoding)!)
+////            }
 //        }
-//        
-//        // start the task
 //        task.resume()
 //    }
-}
 //
 //    func uploadRequest(path: String, data: NSData, title: String) -> NSMutableURLRequest {
 //        let boundary = "---------------------------14737809831466499882746641449"
@@ -132,4 +135,4 @@ struct HttpHelper {
 //        
 //        return errorMessage
 //    }
-//}
+}

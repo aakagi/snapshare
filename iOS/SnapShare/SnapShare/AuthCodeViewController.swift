@@ -55,6 +55,8 @@ class AuthCodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print("token: \(User.accessToken)")
 
     }
 

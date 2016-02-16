@@ -1,7 +1,7 @@
 var Users = require('../models/Users');
 
 var generateToken = function() {
-  return "omfg";
+  return "2222";
 }
 
 // How do I use this?
