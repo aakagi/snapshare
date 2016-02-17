@@ -64,7 +64,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="8Nq-sJ-Eem"/>
                                 </constraints>
-                                <string key="text">Send us your Snapchat username and we'll snap you a code - this can take up to 10 minutes and make sure to temporarily set 'receive snaps' to 'everyone'.</string>
+                                <string key="text">Send us your Snapchat username and we'll snap you a code - this can take up to 10 minutes and expect to see a request from @alexakagi</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -179,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sending Verification Snap..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-V3-q1c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sending Snap..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-V3-q1c">
                                 <rect key="frame" x="20" y="28" width="560" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,8 +228,8 @@
                                 <state key="normal" title="⌫"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="n9d-Li-6fn"/>
                                         <exclude reference="XQv-IM-VR4"/>
+                                        <exclude reference="n9d-Li-6fn"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -264,8 +264,8 @@
                                 <state key="normal" title="8"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Qo4-Ju-mev"/>
                                         <exclude reference="2n6-pp-0SR"/>
+                                        <exclude reference="Qo4-Ju-mev"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -300,8 +300,8 @@
                                 <state key="normal" title="6"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="hak-3l-cnK"/>
                                         <exclude reference="GXy-E3-iws"/>
+                                        <exclude reference="hak-3l-cnK"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -336,8 +336,8 @@
                                 <state key="normal" title="5"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="X7r-lc-j8e"/>
                                         <exclude reference="5k9-gK-uOL"/>
+                                        <exclude reference="X7r-lc-j8e"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -354,8 +354,8 @@
                                 <state key="normal" title="4"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="n1K-Aa-YJ5"/>
                                         <exclude reference="A25-nR-xDu"/>
+                                        <exclude reference="n1K-Aa-YJ5"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -409,8 +409,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="uKI-ky-2EG"/>
                                         <exclude reference="qLP-8J-72A"/>
+                                        <exclude reference="uKI-ky-2EG"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -441,8 +441,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="uQw-jC-IPM"/>
                                         <exclude reference="E3x-0m-H0V"/>
+                                        <exclude reference="uQw-jC-IPM"/>
                                     </mask>
                                 </variation>
                             </label>

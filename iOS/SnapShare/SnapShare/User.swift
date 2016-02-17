@@ -9,16 +9,17 @@
 import Foundation
 
 struct User {
-    static var accessToken: String?
-    static var checkUserId: String?
+
+    let snapname: String
+    let userId: String
+    let authCode: String
     let name: String
-    let username: String
-    let password: String
+//    let joined: NSDate
+    let pictureUrl: String
     
-    
-    static func login(username: String, password: String) -> User?{
-        if let user = database[username] {
-            if user.password == password {
+    static func login(snapname: String, submittedCode: String) -> User? {
+        if let user = database[snapname] {
+            if user.authCode == submittedCode {
                 return user
             }
         }
@@ -28,11 +29,12 @@ struct User {
     static let database: Dictionary<String, User> = {
         var theDatabase = Dictionary<String, User>()
         for user in [
-            User(name: "one dude", username: "dudeone", password: "asdf"),
-            User(name: "two dude", username: "dudetwo", password: "asdf")
+            User(snapname: "alexakagi", userId: "56b5b3d16e0431cb571f5a70", authCode: "1234", name: "Alex Akagi", pictureUrl: "http://www.akagi.co/images/profile.jpg"),
+            User(snapname: "something", userId: "56b5b3d16e0431cb571f5a71", authCode: "1234", name: "Madison Bumgarner", pictureUrl: "http://www.akagi.co/images/profile.jpg"),
+            User(snapname: "leokeisuke", userId: "56b5b3d16e0431cb571f5a72", authCode: "1234", name: "Leo Akagi", pictureUrl: "http://www.akagi.co/images/profile.jpg")
             ] {
-                theDatabase[user.username] = user
+                theDatabase[user.snapname] = user
         }
         return theDatabase
-    } ()
+    }()
 }
