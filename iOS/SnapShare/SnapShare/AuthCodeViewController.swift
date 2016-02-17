@@ -23,7 +23,7 @@ class AuthCodeViewController: UIViewController {
 
     // Set at UserSignInViewController prepareForSegue
     var actualCode: String?
-    var loggingInUserId: String?
+    var snapname: String?
     
     // The input display labels
     @IBOutlet weak var codeInput1: UILabel!
@@ -40,8 +40,8 @@ class AuthCodeViewController: UIViewController {
         
         // TODO - Get the actual access token and Id from UserSignInViewController
         
-        actualCode = "1234"
-        loggingInUserId = "56c26abf5f606edf6846d557"
+        print(self.actualCode)
+        
         
     }
     
@@ -70,9 +70,10 @@ class AuthCodeViewController: UIViewController {
         }
     }
     
+    // TODO - Move this to User model, again was too lazy to do it properly with closures and shit
     func submitAuthCode(submittedCode: String) {
         
-        if submittedCode == actualCode! {
+        if submittedCode == self.actualCode! {
             // Success! - Go get the actual user now
 //            getUserFromServer()
             

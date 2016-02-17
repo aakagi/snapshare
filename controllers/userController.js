@@ -1,7 +1,7 @@
 var Users = require('../models/Users');
 
 var generateToken = function() {
-  return "2222";
+  return String(Math.floor(Math.random()*10000));
 }
 
 // How do I use this?
@@ -20,9 +20,11 @@ module.exports = {
   login: function(req, res) {
     var newToken = generateToken();
 
+    console.log(req.body.snapname);
+
     // First checks to see if user exists
     Users.findOne({
-      snapName: req.body.snapName
+      snapname: req.body.snapname
     }, function(err, doc) {
       if(doc) {
         var doc = doc;
@@ -49,7 +51,7 @@ module.exports = {
       else {
         // Creates new user if user doesn't exist
         Users.create({
-          snapName: req.body.snapName,
+          snapname: req.body.snapname,
           name: "",
           accessToken: newToken,
           joined: new Date(),

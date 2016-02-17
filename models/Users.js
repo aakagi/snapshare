@@ -4,9 +4,9 @@ var Schema = mongoose.Schema;
 
 
 var userSchema = new Schema({
-  snapName: String,
+  snapname: String,
   name: String,
-  actualCode: String,
+  accessToken: String,
   joined: Date,
   pictureUrl: String //URL of image on Amazon S3 - Snapcode or blank
 });

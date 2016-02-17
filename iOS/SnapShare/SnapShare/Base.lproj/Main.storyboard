@@ -160,7 +160,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="userNameInputField" destination="ohJ-38-bMd" id="0gi-cI-G3b"/>
+                        <outlet property="snapnameInputField" destination="ohJ-38-bMd" id="P9E-Io-ok0"/>
+                        <segue destination="4Zb-36-NTx" kind="show" identifier="GoToCodeVC" id="oXA-x8-z33"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WA8-po-NIs" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,12 @@ struct User {
 //    let joined: NSDate
     let pictureUrl: String
     
+    
+    
+    
+    
+    
+    
     static func login(snapname: String, submittedCode: String) -> User? {
         if let user = database[snapname] {
             if user.authCode == submittedCode {
