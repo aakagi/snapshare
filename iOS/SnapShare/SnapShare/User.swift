@@ -11,36 +11,55 @@ import Foundation
 struct User {
 
     let snapname: String
-    let userId: String
     let authCode: String
     let name: String
 //    let joined: NSDate
-    let pictureUrl: String
-    
-    
-    
-    
-    
-    
-    
-    static func login(snapname: String, submittedCode: String) -> User? {
-        if let user = database[snapname] {
-            if user.authCode == submittedCode {
-                return user
+//    let pictureUrl: String
+
+    static func login(snapname: String, submittedCode: String, result: (User?,String?) -> Void) {
+        
+        // Get HttpHelper class
+        let httpHelper = HttpHelper()
+        // Create POST request to /user/auth
+        let httpRequest = httpHelper.buildJsonRequest("user/login", method: "POST")
+        // With body {snapname: snapname} JSON
+        let jsonBody = "{\"snapname\":\"\(snapname)\",\"submittedCode\":\"\(submittedCode)\"}"
+        // Attach JSON
+        httpRequest.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        // Send request
+        var resDataString: String?
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(httpRequest) {(data, res, err) in
+            
+            if err != nil {
+                dispatch_async(dispatch_get_main_queue()) {
+                    result(nil,"error making http request")
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let httpResponse = res as? NSHTTPURLResponse {
+                    if httpResponse.statusCode == 200 {
+                        // Convert result data to string
+                        resDataString = String(data: data!, encoding: NSUTF8StringEncoding)!
+                        // Make that into a dictionary
+                        let resDictionary = httpHelper.convertStringToDictionary(resDataString!)
+                        // Get the parts of the dictionary and assign them to variables
+                        let userSnapname = "\(resDictionary!["snapname"]!)"
+                        let userAuthCode = "\(resDictionary!["accessToken"]!)"
+                        let userName = "\(resDictionary!["name"]!)"
+                        let userResult = User(snapname: userSnapname, authCode: userAuthCode, name: userName)
+                        
+                        result(userResult,nil)
+                    }
+                    else {
+                        result(nil,"invalid password")
+                    }
+                }
+               
             }
         }
-        return nil
+        task.resume()
+        
     }
-    
-    static let database: Dictionary<String, User> = {
-        var theDatabase = Dictionary<String, User>()
-        for user in [
-            User(snapname: "alexakagi", userId: "56b5b3d16e0431cb571f5a70", authCode: "1234", name: "Alex Akagi", pictureUrl: "http://www.akagi.co/images/profile.jpg"),
-            User(snapname: "something", userId: "56b5b3d16e0431cb571f5a71", authCode: "1234", name: "Madison Bumgarner", pictureUrl: "http://www.akagi.co/images/profile.jpg"),
-            User(snapname: "leokeisuke", userId: "56b5b3d16e0431cb571f5a72", authCode: "1234", name: "Leo Akagi", pictureUrl: "http://www.akagi.co/images/profile.jpg")
-            ] {
-                theDatabase[user.snapname] = user
-        }
-        return theDatabase
-    }()
 }

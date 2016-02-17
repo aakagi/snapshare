@@ -73,9 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
-				D612056D1C726261006B7058 /* HttpHelper.swift */,
 				D60F4A241C6EF1F6005C80CD /* User.swift */,
 				D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */,
+				D612056D1C726261006B7058 /* HttpHelper.swift */,
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
 				D60F4A1F1C6EE9CA005C80CD /* VideoTableViewController.swift */,
 				D612056F1C72630B006B7058 /* ApiKeys.swift */,

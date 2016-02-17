@@ -8,6 +8,16 @@
 
 import Foundation
 
+enum HTTPRequestAuthType {
+    case HTTPBasicAuth
+    case HTTPTokenAuth
+}
+
+enum HTTPRequestContentType {
+    case HTTPJsonContent
+    case HTTPMultipartContent
+}
+
 struct HttpHelper {
     static let API_AUTH_NAME = ApiKeys.authName
     static let API_AUTH_PASSWORD = ApiKeys.authPassword
@@ -40,5 +50,4 @@ struct HttpHelper {
         }
         return nil
     }
-    
 }

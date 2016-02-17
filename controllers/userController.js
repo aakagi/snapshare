@@ -1,7 +1,7 @@
 var Users = require('../models/Users');
 
 var generateToken = function() {
-  return String(Math.floor(Math.random()*10000));
+  return String(Math.floor(Math.random()*9000) + 1000);
 }
 
 // How do I use this?
@@ -17,11 +17,8 @@ var userTokenCB = function(err) {
 
 module.exports = {
   // User login - if account doesn't exist, creates new user
-  login: function(req, res) {
+  auth: function(req, res) {
     var newToken = generateToken();
-
-    console.log(req.body.snapname);
-
     // First checks to see if user exists
     Users.findOne({
       snapname: req.body.snapname
@@ -72,20 +69,22 @@ module.exports = {
     });
 
   },
-  // req.body = userId and accessToken
-  auth: function(req, res) {
-    var userId = req.body.userId;
+  // req.body = snapname and submittedToken
+  login: function(req, res) {
+    var snapname = req.body.snapname;
+    var submittedCode = req.body.submittedCode;
     Users.findOne({
-      _id: userId
+      snapname: snapname
     }, function(err, docs) {
+      console.log(docs);
       var realToken = docs.accessToken;
-      var attemptedToken = req.body.accessToken;
+      console.log(submittedCode);
       if(!err) {
-        if(attemptedToken == realToken) {
-          res.send("You're a real user yay");
+        if(submittedCode == realToken) {
+          res.status(200).send(docs);
         }
         else {
-          res.send("Rejected");
+          res.status(400).send("Rejected");
         }
       }
       else {
@@ -112,10 +111,5 @@ module.exports = {
         res.status(500).send(err);
       }
     });
-  },
-  test: function(req, res) {
-    console.log(req);
-    res.send("received");
   }
-
 }

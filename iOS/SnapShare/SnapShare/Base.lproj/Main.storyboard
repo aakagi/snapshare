@@ -572,11 +572,12 @@
                         <outlet property="codeInput2" destination="5Iy-8o-aIe" id="hMF-72-7A9"/>
                         <outlet property="codeInput3" destination="Aji-L4-E42" id="6eZ-ox-ea4"/>
                         <outlet property="codeInput4" destination="4UW-mu-a2K" id="19j-fh-j3r"/>
+                        <segue destination="vMG-17-MQu" kind="show" identifier="GoToMainVideoTableVC" id="fYI-e6-6tJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rc7-vU-74F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="949" y="120"/>
+            <point key="canvasLocation" x="997" y="120"/>
         </scene>
         <!--Video Table View Controller-->
         <scene sceneID="G7S-bq-Pu9">

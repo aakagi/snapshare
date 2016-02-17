@@ -40,8 +40,8 @@ class AuthCodeViewController: UIViewController {
         
         // TODO - Get the actual access token and Id from UserSignInViewController
         
-        print(self.actualCode)
-        
+        print(self.actualCode!)
+        print(self.snapname!)
         
     }
     
@@ -59,13 +59,13 @@ class AuthCodeViewController: UIViewController {
         // Trigger when the last number is entered
         if currentIndex == 4 {
             // Convert array of entered numbers to a single string
-            var code = ""
+            var codeAttempt = ""
             for i in codeInputArray {
-                code += i.text!
+                codeAttempt += i.text!
                 i.text = "-"
             }
             // Validate code with authCode
-            submitAuthCode(code)
+            submitAuthCode(codeAttempt)
             currentIndex = 0
         }
     }
@@ -73,23 +73,16 @@ class AuthCodeViewController: UIViewController {
     // TODO - Move this to User model, again was too lazy to do it properly with closures and shit
     func submitAuthCode(submittedCode: String) {
         
-        if submittedCode == self.actualCode! {
-            // Success! - Go get the actual user now
-//            getUserFromServer()
-            
-            // Manual Storyboard Segue
-            let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let VideoTableVC: UIViewController = Storyboard.instantiateViewControllerWithIdentifier("VideoTableVC")
-            self.presentViewController(VideoTableVC, animated: true, completion: nil)
-        }
-        else {
-            print("Nope")
-            
-            // TODO - Make rejection pretty for the user
-            
-        }
         
-        
+        User.login(self.snapname!, submittedCode: submittedCode, result: {(resultUser, err) in
+            if err != nil {
+                print(err!)
+            }
+            else {
+                print(resultUser!)
+                self.performSegueWithIdentifier("GoToMainVideoTableVC", sender: self)
+            }
+        })
     }
     
     // Called for deleting a number
@@ -100,19 +93,18 @@ class AuthCodeViewController: UIViewController {
         }
     }
     
-
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
-    
+//        let destVC = segue.destinationViewController as! VideoTableViewController
+//        destVC.actualCode = sender?.generatedCode!
+//        destVC.snapname = sender?.snapname
+//    }
     
 
 }

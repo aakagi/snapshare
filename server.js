@@ -51,18 +51,17 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
 
-app.get('/test', function(req, res) {
+app.post('/test', function(req, res) {
+  console.log(req.body);
   res.send({
     url: "http://www.akagi.co/video/snapstory1.m4v",
     user: "Alex"
   });
 })
 
-app.post('/user/test', userController.test);
-
 // User management
-app.post('/user/login', userController.login); // login & for account creation
-app.post('/user/auth', userController.auth); // auth password
+app.post('/user/auth', userController.auth); // account & generate token
+app.post('/user/login', userController.login); // login, returns user doc
 app.get('/user/logout', userController.logout); // log out
 app.post('/user/scrname', userController.scrname); // update screen name
 // User video routes

@@ -23,6 +23,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var snapnameInputField: UITextField!
     
     var generatedCode: String?
+    var snapname: String?
     
     
     // Mark: On Load
@@ -59,7 +60,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         // Get HttpHelper class
         let httpHelper = HttpHelper()
         // Create POST request to /user/login
-        let httpRequest = httpHelper.buildJsonRequest("user/login", method: "POST")
+        let httpRequest = httpHelper.buildJsonRequest("user/auth", method: "POST")
         // With body {snapname: snapname} JSON
         let jsonBody = "{\"snapname\":\"\(snapname)\"}"
         // Attach JSON
@@ -80,13 +81,10 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
                     // Make that into a dictionary
                     let resDictionary = httpHelper.convertStringToDictionary(resDataString!)
                     // Get the parts of the dictionary and assign them to variables
-//                    print("\(resDictionary!["accessToken"])")
-                    
-                    self.generatedCode = "\(resDictionary!["accessToken"])"
-                    
+                    self.generatedCode = "\(resDictionary!["accessToken"]!)"
+                    self.snapname = snapname
                     
                     self.performSegueWithIdentifier("GoToCodeVC", sender: self)
-//                    self.segueToVCInMainStoryboard("CodeVC")
                     
                 }
             }
@@ -112,20 +110,13 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    
-    func segueToVCInMainStoryboard(chosenVC: String) {
-        // Manual Storyboard Segue
-        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vcObj: UIViewController = Storyboard.instantiateViewControllerWithIdentifier(chosenVC)
-        self.presentViewController(vcObj, animated: true, completion: nil)
-    }
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let destVC = segue.destinationViewController as! AuthCodeViewController
         destVC.actualCode = sender?.generatedCode!
+        destVC.snapname = sender?.snapname
         
     }
 
