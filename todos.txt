@@ -1,37 +1,42 @@
 Comprehensive Todo List In Order to Finish By 2/19
 -----------------------
 
---------------------
-  4 DAYS Remaining 
---------------------
+----------------
+4 Days Remaining 
+----------------
 
-2/16 & 2/17
+2/17
 
-- Crush this tutorial and implement appropriate parts
-  - http://www.raywenderlich.com/85528/user-accounts-ios-ruby-rails-swift
+CRUSH AWS.
+
+- Figure out how to retrieve AWS videos
+
+- Store usertoken & figure out sessions
 
 - Create a temporary user and video display ViewController
 
-- Build User model
-  - login()
 - Build Video model
   - getTopVideos()
   - getNewVideos()
   - getUserVideosWithSnapname(snapname)
 
+
 2/18
-
-- AWS nonsense with keys
-
-- Build functional layout ignoring custom avplayer
-
-- Build users page
-
-- Build custom video player
-
 - Build video upload
 
+2/19
+- Build a beautiful custom video player.
 
+2/20
+- Buffer
+- iOS dev account
+
+2/21
+- Build website with react
+- Test flight
+
+2/22
+- Settings page, etc
 
 Eventually
 - Build settings page
@@ -46,14 +51,32 @@ Eventually
 - Collect Assets
 
 
-2/21
 
-- Have polished product by end of day
 
-- Submit to App store?
+2/23
+- Testing
 
-DEFINITIVE DATE TO KNOW IF THIS APP IS FEASIBLE
+2/24
+- Ship
 
+2/25
+- Analytics
+
+2/26
+- Optimize AWS
+
+2/27
+- Get a meeting with Danielle ASAP
+
+2/28
+- Marketing materials
+
+2/29
+
+3/10
+- Secure at least $1000 or go under
+
+share stories
 
 After app submission
 - Analytics & CRUD webview
@@ -62,3 +85,8 @@ After app submission
 
 I should create a system that allows high schoolers to onboard people
 Advertise to DJ Khalid & Gary's employees
+
+
+- Figure out Khalid's closest 100 people by employment
+- Run $100 of ads
+

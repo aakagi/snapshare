@@ -11,85 +11,85 @@ import AVFoundation
 
 class EachVideoTableViewCell: UITableViewCell {
     
-    var video: NSURL? {
+    var videoObj: Video? {
         didSet {
             updateUI()
         }
     }
     
-    var playerItem: AVPlayerItem?
-    var player: AVPlayer?
-    var playerLayer: AVPlayerLayer?
+    var cellExpanded: Bool?
     
-    @IBOutlet weak var playToggle: UIButton!
-    @IBOutlet weak var plusThree: UIButton!
-    @IBOutlet weak var tempButton: UIButton!
+    var playerLayer: AVPlayerLayer?
+    var player: AVPlayer?
+    var playerItem: AVPlayerItem?
     
     func updateUI() {
         
-        let url = video!
-        playerItem = AVPlayerItem(URL: url)
+        // Makes size of video player the exact size of an iphone camera in portrait mode
+        let videoSizeRect = CGRectMake(self.frame.width * 7/32, 0, self.frame.width * 18/32, self.frame.width)
+
+        // Create video player
+        let url = NSURL(string: videoObj!.videoUrl)
+        playerItem = AVPlayerItem(URL: url!)
         player = AVPlayer(playerItem: playerItem!)
         playerLayer = AVPlayerLayer(player: player!)
+        playerLayer!.frame = videoSizeRect
         
-        playerLayer!.frame = CGRectMake(0,20,self.frame.width,self.frame.height / 1.6)
+        // Make an overlay that acts as a play toggle button when you tap on the video
+        let playToggleView = UIView(frame: videoSizeRect)
+        let tap = UITapGestureRecognizer(target: self, action: Selector("togglePlay:"))
+        tap.delegate = self
+        playToggleView.addGestureRecognizer(tap)
+        
+        // TODO - Add username overlay somewhere
+        
+        // TODO - Make major key button
+        
+        // TODO - Make fast forward 3 seconds button
+        
+        
+        
+        // Add shit to the cell
+        self.clipsToBounds = true
         self.layer.addSublayer(playerLayer!)
-        
-        playToggle.addTarget(self, action: "playButtonTapped:", forControlEvents: .TouchUpInside)
-        
-        plusThree.addTarget(self, action: "ffThreeSeconds:", forControlEvents: .TouchUpInside)
-        
-        tempButton.addTarget(self, action: "httpReq:", forControlEvents: .TouchUpInside)
-        
+        self.layer.borderColor = UIColor.grayColor().CGColor
+        self.layer.borderWidth = 0.5
+        self.addSubview(playToggleView)
+
     }
-    
-    func playButtonTapped(sender: AnyObject) {
+
+    func togglePlay(sender: AnyObject) {
+//        if cellExpanded == false {
+//            UIView.animateWithDuration(0.1, animations: {() in
+//                var cellFrame: CGRect = self.bounds
+//                cellFrame.size.height = self.bounds.width
+//                self.bounds = cellFrame
+//                
+//                let tableSuperview = self.superview
+//                var tableSuperviewFrame: CGRect = tableSuperview!.bounds
+//                print(tableSuperviewFrame.size.height)
+//                tableSuperviewFrame.size.height += self.bounds.width
+//                print(tableSuperviewFrame.size.height)
+//                self.superview!.bounds = tableSuperviewFrame
+//
+//            })
+//            cellExpanded = true
+//        }
         if player?.rate == 0 {
             player!.play()
-            playToggle.setTitle("Pause", forState: UIControlState.Normal)
         }
         else {
             player!.pause()
-            playToggle.setTitle("Play", forState: UIControlState.Normal)
         }
     }
-    
-    // THIS FUNCTION BARELY WORKS - YOU CAN'T SPAM THE +3 BUTTON, ALSO SHOULD BE MORE OO
-    func ffThreeSeconds(sender: AnyObject) {
-        let addTime = CMTimeMake(3, 1)
-        player!.seekToTime(player!.currentTime() + addTime)
-    }
-    
-    func httpReq(sender: AnyObject) {
-        let url = NSURL(string: "http://localhost:8000/test")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, res, err) in
-            
-            if data != nil {
-//                print(String(data: data!, encoding: NSUTF8StringEncoding)!)
-                
-                
-//                let jsonRes: NSDictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                
-                
-//                print("AsSynchronous\(jsonRes)")
-            }
-            
-            if res != nil {
-                print(res!)
-            }
-            
-        }
-        
-        task.resume()
-        
-        
-        
-        
-        
-    }
-    
-    
-    
-    
 }
+// THIS FUNCTION BARELY WORKS - YOU CAN'T SPAM THE +3 BUTTON, ALSO SHOULD BE MORE OO
+//    func ffThreeSeconds(sender: AnyObject) {
+//        let addTime = CMTimeMake(3, 1)
+//        player!.seekToTime(player!.currentTime() + addTime)
+//    }
+
+
+    
+    
+

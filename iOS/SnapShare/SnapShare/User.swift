@@ -15,7 +15,8 @@ struct User {
     let name: String
 //    let joined: NSDate
 //    let pictureUrl: String
-
+    
+    // Once this func is called, you can retrieve the resulting User and Error (string right now) from result:
     static func login(snapname: String, submittedCode: String, result: (User?,String?) -> Void) {
         
         // Get HttpHelper class
@@ -53,7 +54,7 @@ struct User {
                         result(userResult,nil)
                     }
                     else {
-                        result(nil,"invalid password")
+                        result(nil,"Invalid code. Go back if you need another code!")
                     }
                 }
                

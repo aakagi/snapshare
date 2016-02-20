@@ -25,6 +25,8 @@ class AuthCodeViewController: UIViewController {
     var actualCode: String?
     var snapname: String?
     
+    var loggedInUser: User?
+    
     // The input display labels
     @IBOutlet weak var codeInput1: UILabel!
     @IBOutlet weak var codeInput2: UILabel!
@@ -49,6 +51,9 @@ class AuthCodeViewController: UIViewController {
     @IBAction func numberButtonPressed(sender: UIButton) {
         // Set the codeInputArray here because Swift is annoying and I can't do it at the top
         codeInputArray = [codeInput1,codeInput2,codeInput3,codeInput4]
+        
+        
+        
         // Get the pressed digit
         let digit = sender.currentTitle!
         // Set the label text to the number
@@ -62,7 +67,6 @@ class AuthCodeViewController: UIViewController {
             var codeAttempt = ""
             for i in codeInputArray {
                 codeAttempt += i.text!
-                i.text = "-"
             }
             // Validate code with authCode
             submitAuthCode(codeAttempt)
@@ -76,13 +80,33 @@ class AuthCodeViewController: UIViewController {
         
         User.login(self.snapname!, submittedCode: submittedCode, result: {(resultUser, err) in
             if err != nil {
-                print(err!)
+                self.presentError("Please try again.", message: err!)
             }
             else {
-                print(resultUser!)
-                self.performSegueWithIdentifier("GoToMainVideoTableVC", sender: self)
+                
+                self.loggedInUser = resultUser!
+                
+                // TODO - Set NSUserDefaults to store session
+                // let userSessionKey = self.loggedInUser.sessionKey
+                // NSUserDefaults.standardUserDefaults().setObject(, forKey: "storedUser")
+                
+                self.performSegueWithIdentifier("SegueToMain", sender: self)
             }
         })
+    }
+    
+    func presentError(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: {() in self.resetInputFields()})
+    }
+    
+    func resetInputFields() {
+        if self.currentIndex == 0 {
+            for i in self.codeInputArray {
+                i.text = "-"
+            }
+        }
     }
     
     // Called for deleting a number
@@ -92,19 +116,17 @@ class AuthCodeViewController: UIViewController {
             codeInputArray[currentIndex].text = "-"
         }
     }
-    
-    
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-//        let destVC = segue.destinationViewController as! VideoTableViewController
-//        destVC.actualCode = sender?.generatedCode!
-//        destVC.snapname = sender?.snapname
-//    }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Do the actual segue
+        if segue.identifier == "SegueToMain" {
+//            let destVC = segue.destinationViewController as! VideoTableViewController
+//            destVC.loggedInUser = self.loggedInUser
+        }
+    }
+
 
 }
