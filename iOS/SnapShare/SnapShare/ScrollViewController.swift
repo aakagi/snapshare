@@ -14,43 +14,43 @@ class ScrollViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        var homeTableView: VideoTableViewController = VideoTableViewController()
         
-        print("self.view.frame.width \(self.view.frame.width)")
-        
-        let Test1: TestView1ViewController = TestView1ViewController(nibName: "TestView1ViewController", bundle: nil)
-        let Test2: TestView2ViewController = TestView2ViewController()
-        let Test3: TestView3ViewController = TestView3ViewController()
-        
+        // Initialize the three VCs
+        let Test1: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
+        let Test2: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
+        let Test3: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
         self.addChildViewController(Test1)
-        self.scrollViewOutlet.addSubview(Test1.view)
-        Test1.didMoveToParentViewController(self)
-        
         self.addChildViewController(Test2)
-        self.scrollViewOutlet.addSubview(Test2.view)
-        Test2.didMoveToParentViewController(self)
-
         self.addChildViewController(Test3)
-        self.scrollViewOutlet.addSubview(Test3.view)
+        Test1.didMoveToParentViewController(self)
+        Test2.didMoveToParentViewController(self)
         Test3.didMoveToParentViewController(self)
+
+        // Nav bar items
+        Test1.rightButtonString = "Videos"
+        Test2.leftButtonString = "Settings"
+        Test2.rightButtonString = "User"
+        Test3.leftButtonString = "Videos"
         
-        Test2.view.frame.origin.x = self.view.frame.width
+        // Set frames for the three VCs
+        let screenWidth = self.scrollViewOutlet.frame.width
+        let screenHeight = self.scrollViewOutlet.frame.height
+        Test1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
+        Test2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
+        Test3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
         
-        Test3.view.backgroundColor = UIColor.blueColor()        
-        Test3.view.frame = CGRectMake(self.view.frame.width * 2, 0, self.view.frame.width, self.view.frame.height)
-        
-        print("Test1.view.frame.width \(Test1.view.frame.width)")
-        print("Test3.view.frame.width \(Test3.view.frame.width)")
-        
-        print("self.view.frame.width \(self.view.frame.width)")
-        
+        Test1.parentScrollView = self.scrollViewOutlet
+        Test2.parentScrollView = self.scrollViewOutlet
+        Test3.parentScrollView = self.scrollViewOutlet
+
+        // Set size of ScrollView content size on parent view
         self.scrollViewOutlet.contentSize = CGSizeMake(self.view.frame.width * 3, self.view.frame.height)
-        self.scrollViewOutlet.contentOffset = CGPoint(x: self.view.frame.width, y: self.view.frame.height)
+        self.scrollViewOutlet.contentOffset = CGPoint(x: self.view.frame.width, y: 0)
         
-        
-        
-        
+        // Add the three VCs on top of the ScrollView
+        self.scrollViewOutlet.addSubview(Test1.view)
+        self.scrollViewOutlet.addSubview(Test2.view)
+        self.scrollViewOutlet.addSubview(Test3.view)
         
     }
 

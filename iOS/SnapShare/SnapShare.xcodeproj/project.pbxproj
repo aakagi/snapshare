@@ -20,11 +20,7 @@
 		D61205701C72630B006B7058 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056F1C72630B006B7058 /* ApiKeys.swift */; };
 		D641B4541C778C8800029DEA /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4531C778C8800029DEA /* UserTableViewController.swift */; };
 		D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4551C77A9A700029DEA /* ScrollViewController.swift */; };
-		D641B4611C77E61300029DEA /* TestView1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B45F1C77E61300029DEA /* TestView1ViewController.swift */; };
-		D641B4621C77E61300029DEA /* TestView1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D641B4601C77E61300029DEA /* TestView1ViewController.xib */; };
-		D641B4651C77E75100029DEA /* TestView2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4631C77E75100029DEA /* TestView2ViewController.swift */; };
-		D641B4661C77E75100029DEA /* TestView2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D641B4641C77E75100029DEA /* TestView2ViewController.xib */; };
-		D641B4691C77E8C600029DEA /* TestView3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4671C77E8C600029DEA /* TestView3ViewController.swift */; };
+		D641B4651C77E75100029DEA /* ChildViewControllerOfScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4631C77E75100029DEA /* ChildViewControllerOfScrollView.swift */; };
 		D641B46C1C77ECF200029DEA /* TestView4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B46B1C77ECF200029DEA /* TestView4ViewController.swift */; };
 		DE0B3F2EF0DF02236B43E3F0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191DD9349CABF047FCF4222F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -48,11 +44,7 @@
 		D641B44B1C75364600029DEA /* AWSBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWSBridgingHeader.h; sourceTree = "<group>"; };
 		D641B4531C778C8800029DEA /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		D641B4551C77A9A700029DEA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		D641B45F1C77E61300029DEA /* TestView1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView1ViewController.swift; sourceTree = "<group>"; };
-		D641B4601C77E61300029DEA /* TestView1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestView1ViewController.xib; sourceTree = "<group>"; };
-		D641B4631C77E75100029DEA /* TestView2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestView2ViewController.swift; path = SnapShare/TestView2ViewController.swift; sourceTree = "<group>"; };
-		D641B4641C77E75100029DEA /* TestView2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestView2ViewController.xib; path = SnapShare/TestView2ViewController.xib; sourceTree = "<group>"; };
-		D641B4671C77E8C600029DEA /* TestView3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestView3ViewController.swift; path = SnapShare/TestView3ViewController.swift; sourceTree = "<group>"; };
+		D641B4631C77E75100029DEA /* ChildViewControllerOfScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewControllerOfScrollView.swift; path = SnapShare/ChildViewControllerOfScrollView.swift; sourceTree = "<group>"; };
 		D641B46B1C77ECF200029DEA /* TestView4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView4ViewController.swift; sourceTree = "<group>"; };
 		EC0F50E18BCB4D69AEA69081 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,11 +81,7 @@
 		D60F49DD1C6D7601005C80CD = {
 			isa = PBXGroup;
 			children = (
-				D641B45F1C77E61300029DEA /* TestView1ViewController.swift */,
-				D641B4601C77E61300029DEA /* TestView1ViewController.xib */,
-				D641B4631C77E75100029DEA /* TestView2ViewController.swift */,
-				D641B4641C77E75100029DEA /* TestView2ViewController.xib */,
-				D641B4671C77E8C600029DEA /* TestView3ViewController.swift */,
+				D641B4631C77E75100029DEA /* ChildViewControllerOfScrollView.swift */,
 				D60F49E81C6D7601005C80CD /* SnapShare */,
 				D60F49E71C6D7601005C80CD /* Products */,
 				19A4218B245A97E29B8F0119 /* Pods */,
@@ -226,11 +214,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D641B4661C77E75100029DEA /* TestView2ViewController.xib in Resources */,
 				D60F49F41C6D7601005C80CD /* LaunchScreen.storyboard in Resources */,
 				D60F49F11C6D7601005C80CD /* Assets.xcassets in Resources */,
 				D60F49EF1C6D7601005C80CD /* Main.storyboard in Resources */,
-				D641B4621C77E61300029DEA /* TestView1ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,15 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D641B4541C778C8800029DEA /* UserTableViewController.swift in Sources */,
-				D641B4691C77E8C600029DEA /* TestView3ViewController.swift in Sources */,
-				D641B4611C77E61300029DEA /* TestView1ViewController.swift in Sources */,
 				D61205701C72630B006B7058 /* ApiKeys.swift in Sources */,
 				D60F4A271C6F0D42005C80CD /* EachVideoTableViewCell.swift in Sources */,
 				D60F4A221C6EEA9F005C80CD /* Video.swift in Sources */,
 				D612056E1C726261006B7058 /* HttpHelper.swift in Sources */,
 				D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */,
 				D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */,
-				D641B4651C77E75100029DEA /* TestView2ViewController.swift in Sources */,
+				D641B4651C77E75100029DEA /* ChildViewControllerOfScrollView.swift in Sources */,
 				D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */,
 				D60F4A251C6EF1F6005C80CD /* User.swift in Sources */,
 				D641B46C1C77ECF200029DEA /* TestView4ViewController.swift in Sources */,
