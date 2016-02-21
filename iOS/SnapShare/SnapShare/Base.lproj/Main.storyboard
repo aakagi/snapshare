@@ -590,22 +590,8 @@
                     <view key="view" contentMode="scaleToFill" id="nzi-tb-KaB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-Y5-5hw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ltm-Y5-5hw" firstAttribute="centerY" secondItem="nzi-tb-KaB" secondAttribute="centerY" id="Q9I-0L-gU5"/>
-                            <constraint firstItem="Ltm-Y5-5hw" firstAttribute="height" secondItem="nzi-tb-KaB" secondAttribute="height" id="n0B-WC-Pes"/>
-                            <constraint firstItem="Ltm-Y5-5hw" firstAttribute="width" secondItem="nzi-tb-KaB" secondAttribute="width" id="oT9-YH-ZHS"/>
-                            <constraint firstItem="Ltm-Y5-5hw" firstAttribute="centerX" secondItem="nzi-tb-KaB" secondAttribute="centerX" id="tuP-ax-Xir"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollViewOutlet" destination="Ltm-Y5-5hw" id="yo6-FD-MWR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRb-Pf-cuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,13 +9,23 @@
 import UIKit
 
 class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
-    var loggedInUser: User?
+//    var loggedInUser: User?
     var videos = [[Video]]()
+    
+    var parentScrollUIVC: ScrollViewChildVC?
     
     // Mark: View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.tableView.contentOffset = 
+//            UIEdgeInsetsMake(44,0,0,0);
+        
+        
+//        self.view.backgroundColor = UIColor(white: 1, alpha: 0.0)
+        
+        
         
         Video.getTopVideos(3, result: { (videoArray, error) in
             self.videos.insert(videoArray, atIndex: 0)
@@ -47,7 +57,8 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.CellReuseIdentifier, forIndexPath: indexPath) as! EachVideoTableViewCell
+        let cell = EachVideoTableViewCell()
+//        cell.
         
         cell.videoObj = videos[indexPath.section][indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -58,6 +69,11 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
         else {
             cell.cellExpanded = false
         }
+        
+//        cell.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.width)
+
+        print("self.view.frame.width: \(self.view.frame.width)")
+        print("cell.frame.width: \(cell.frame.width)")
         
         return cell
     }
@@ -72,7 +88,7 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
         //        }
         
     }
-    
+
     
     
     /*

@@ -26,7 +26,12 @@ class EachVideoTableViewCell: UITableViewCell {
     func updateUI() {
         
         // Makes size of video player the exact size of an iphone camera in portrait mode
-        let videoSizeRect = CGRectMake(self.frame.width * 7/32, 0, self.frame.width * 18/32, self.frame.width)
+
+        print("self.frame.width: \(self.frame.width)")
+        
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        
+        let videoSizeRect = CGRectMake(screenWidth * 7/32, 0, screenWidth * 18/32, screenWidth)
 
         // Create video player
         let url = NSURL(string: videoObj!.videoUrl)

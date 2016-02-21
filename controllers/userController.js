@@ -76,9 +76,7 @@ module.exports = {
     Users.findOne({
       snapname: snapname
     }, function(err, docs) {
-      console.log(docs);
       var realToken = docs.accessToken;
-      console.log(submittedCode);
       if(!err) {
         if(submittedCode == realToken) {
           res.status(200).send(docs);

@@ -8,17 +8,29 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
-
-    @IBOutlet weak var scrollViewOutlet: UIScrollView!
+class ScrollViewController: UIViewController, UIScrollViewDelegate {
+    
+    var testScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let screenHeight = UIScreen.mainScreen().bounds.height
+        
+        // Create UIScrollView
+        let scrollViewRect = CGRectMake(0, 0, screenWidth, screenHeight)
+        self.testScrollView = UIScrollView(frame: scrollViewRect)
+        self.testScrollView.delegate = self
+        self.testScrollView.backgroundColor = UIColor.blackColor()
+        self.testScrollView.pagingEnabled = true
+        
+        self.view.addSubview(testScrollView)
+        
         // Initialize the three VCs
-        let Test1: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
-        let Test2: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
-        let Test3: ChildViewControllerOfScrollView = ChildViewControllerOfScrollView()
+        let Test1: ScrollViewChildVC = ScrollViewChildVC()
+        let Test2: ScrollViewChildVC = ScrollViewChildVC()
+        let Test3: ScrollViewChildVC = ScrollViewChildVC()
         self.addChildViewController(Test1)
         self.addChildViewController(Test2)
         self.addChildViewController(Test3)
@@ -33,25 +45,23 @@ class ScrollViewController: UIViewController {
         Test3.leftButtonString = "Videos"
         
         // Set frames for the three VCs
-        let screenWidth = self.scrollViewOutlet.frame.width
-        let screenHeight = self.scrollViewOutlet.frame.height
         Test1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
         Test2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
         Test3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
-        
-        Test1.parentScrollView = self.scrollViewOutlet
-        Test2.parentScrollView = self.scrollViewOutlet
-        Test3.parentScrollView = self.scrollViewOutlet
+
+        Test1.parentScrollView = self.testScrollView
+        Test2.parentScrollView = self.testScrollView
+        Test3.parentScrollView = self.testScrollView
 
         // Set size of ScrollView content size on parent view
-        self.scrollViewOutlet.contentSize = CGSizeMake(self.view.frame.width * 3, self.view.frame.height)
-        self.scrollViewOutlet.contentOffset = CGPoint(x: self.view.frame.width, y: 0)
+        self.testScrollView.contentSize = CGSizeMake(screenWidth * 3, self.view.frame.height)
+        self.testScrollView.contentOffset = CGPoint(x: screenWidth, y: 0)
         
         // Add the three VCs on top of the ScrollView
-        self.scrollViewOutlet.addSubview(Test1.view)
-        self.scrollViewOutlet.addSubview(Test2.view)
-        self.scrollViewOutlet.addSubview(Test3.view)
-        
+        self.testScrollView.addSubview(Test1.view)
+        self.testScrollView.addSubview(Test2.view)
+        self.testScrollView.addSubview(Test3.view)
+
     }
 
     override func didReceiveMemoryWarning() {

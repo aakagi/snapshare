@@ -52,8 +52,6 @@ class AuthCodeViewController: UIViewController {
         // Set the codeInputArray here because Swift is annoying and I can't do it at the top
         codeInputArray = [codeInput1,codeInput2,codeInput3,codeInput4]
         
-        
-        
         // Get the pressed digit
         let digit = sender.currentTitle!
         // Set the label text to the number
@@ -76,7 +74,6 @@ class AuthCodeViewController: UIViewController {
     
     // TODO - Move this to User model, again was too lazy to do it properly with closures and shit
     func submitAuthCode(submittedCode: String) {
-        
         
         User.login(self.snapname!, submittedCode: submittedCode, result: {(resultUser, err) in
             if err != nil {
@@ -116,17 +113,5 @@ class AuthCodeViewController: UIViewController {
             codeInputArray[currentIndex].text = "-"
         }
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Do the actual segue
-        if segue.identifier == "SegueToMain" {
-//            let destVC = segue.destinationViewController as! VideoTableViewController
-//            destVC.loggedInUser = self.loggedInUser
-        }
-    }
-
-
+    
 }
