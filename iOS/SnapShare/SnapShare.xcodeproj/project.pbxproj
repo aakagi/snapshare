@@ -177,6 +177,7 @@
 		D60F49E81C6D7601005C80CD /* SnapShare */ = {
 			isa = PBXGroup;
 			children = (
+				D612056F1C72630B006B7058 /* ApiKeys.swift */,
 				D641B4501C75BAC000029DEA /* Views */,
 				D641B44F1C75BA9C00029DEA /* Controllers */,
 				D641B44E1C75BA9000029DEA /* Models */,
@@ -190,7 +191,6 @@
 			children = (
 				D641B44B1C75364600029DEA /* AWSBridgingHeader.h */,
 				D60F49E91C6D7601005C80CD /* AppDelegate.swift */,
-				D612056F1C72630B006B7058 /* ApiKeys.swift */,
 				D60F49F51C6D7601005C80CD /* Info.plist */,
 			);
 			name = Hide;
