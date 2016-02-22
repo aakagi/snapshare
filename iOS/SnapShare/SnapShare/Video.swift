@@ -17,6 +17,10 @@ struct Video {
 //    let posted: [NSDate]
     let reported: Int
     
+    static func uploadToS3() {
+        print("uploadSnapstory")
+    }
+    
     static func getTopVideos(count: Int, result: (videoArray: [Video], error: String?) -> Void) {
         let videoArray = [
             Video(user: "alexakagi", videoUrl: "http://www.akagi.co/video/video1.m4v", plays: 310, likes: 42, reported: 0),

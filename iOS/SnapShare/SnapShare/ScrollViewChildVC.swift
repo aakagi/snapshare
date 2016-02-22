@@ -23,13 +23,14 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO - Make the nav bar more abstract
+        
         // Create the navigation bar - Note: time, battery life, etc has a height of 20
         let navHeight = CGFloat(54)
         let screenWidth = UIScreen.mainScreen().bounds.width
         let screenHeight = UIScreen.mainScreen().bounds.height
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, navHeight))
-        
         navigationBar.backgroundColor = UIColor.whiteColor()
         navigationBar.delegate = self;
         
@@ -52,8 +53,16 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
-
-        let childViewRect = CGRectMake(0, navHeight, screenWidth, screenHeight)
+        let uploadButtonHeight = CGFloat(50)
+        
+        let uploadButtonRect = CGRectMake(0, screenHeight - uploadButtonHeight, screenWidth, uploadButtonHeight)
+        
+        let uploadButton = UIButton(frame: uploadButtonRect)
+        uploadButton.backgroundColor = UIColor.blueColor()
+        uploadButton.setTitle("Upload My Story", forState: UIControlState.Normal)
+        uploadButton.addTarget(self, action: "test", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        let childViewRect = CGRectMake(0, navHeight, screenWidth, screenHeight - uploadButtonHeight)
         
         if self.fetchVideosParam != nil {
             let childVideoVC = VideoTableViewController()
@@ -61,6 +70,7 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
             childVideoVC.didMoveToParentViewController(self)
             childVideoVC.view.frame = childViewRect
             self.view.addSubview(childVideoVC.view)
+            self.view.addSubview(uploadButton)
         }
         else {
             // TODO - Settings Page
@@ -69,15 +79,14 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
             self.view.addSubview(settingsVC.view)
         }
         
-//        self.childViewController = VideoTableViewController()
-        
-        if childViewController != nil {
-            self.addChildViewController(self.childViewController!)
-            self.childViewController!.didMoveToParentViewController(self)
-            self.childViewController!.view.frame = CGRectMake(0, navHeight, screenWidth, screenHeight)
-            self.view.addSubview(self.childViewController!.view)
-        }
 
+    }
+    
+    func test() {
+        print("here")
+        
+        
+        
     }
     
     func navButtonClicked(sender: UIBarButtonItem) {
