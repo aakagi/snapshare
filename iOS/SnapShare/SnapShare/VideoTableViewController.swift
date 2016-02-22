@@ -9,48 +9,26 @@
 import UIKit
 
 class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
-//    var loggedInUser: User?
     var videos = [[Video]]()
-    
-    var parentScrollUIVC: ScrollViewChildVC?
     
     // Mark: View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.contentOffset = 
-//            UIEdgeInsetsMake(44,0,0,0);
-        
-        
-//        self.view.backgroundColor = UIColor(white: 1, alpha: 0.0)
-        
-        
-        
         Video.getTopVideos(3, result: { (videoArray, error) in
             self.videos.insert(videoArray, atIndex: 0)
         })
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return videos.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return videos[section].count
-    }
-    
-    private struct StoryBoard {
-        static let CellReuseIdentifier = "Video"
     }
     
     private let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
@@ -58,7 +36,6 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = EachVideoTableViewCell()
-//        cell.
         
         cell.videoObj = videos[indexPath.section][indexPath.row]
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -70,18 +47,13 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
             cell.cellExpanded = false
         }
         
-//        cell.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.width)
-
-        print("self.view.frame.width: \(self.view.frame.width)")
-        print("cell.frame.width: \(cell.frame.width)")
-        
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         //        if indexPath == firstIndexPath {
-        return self.view.frame.width
+        return UIScreen.mainScreen().bounds.width
         //        }
         //        else {
         //            return self.view.frame.width * 1/3
@@ -89,35 +61,6 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
         
     }
 
-    
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
     /*
     // MARK: - Navigation
     

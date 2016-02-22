@@ -44,11 +44,15 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         Test2.rightButtonString = "User"
         Test3.leftButtonString = "Videos"
         
+        Test2.fetchVideosParam = "Something1"
+        Test3.fetchVideosParam = "Something2"
+        
         // Set frames for the three VCs
         Test1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
         Test2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
         Test3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
-
+        
+        // Pass down the scrollView so child knows the current view offset after swipe
         Test1.parentScrollView = self.testScrollView
         Test2.parentScrollView = self.testScrollView
         Test3.parentScrollView = self.testScrollView

@@ -16,6 +16,8 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
     
     var childViewController: UIViewController?
     
+    var fetchVideosParam: String?
+    
 
 
     override func viewDidLoad() {
@@ -51,29 +53,30 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
         self.view.addSubview(navigationBar)
         
 
+        let childViewRect = CGRectMake(0, navHeight, screenWidth, screenHeight)
         
-        let Test1: VideoTableViewController = VideoTableViewController()
-        self.addChildViewController(Test1)
-        Test1.didMoveToParentViewController(self)
-        Test1.parentScrollUIVC = self
-        Test1.view.frame = CGRectMake(0, navHeight, screenWidth, screenHeight)
-        
-        
-        
-        self.view.addSubview(Test1.view)
-        
-        
-        
-        if childViewController != nil {
-//            childViewController
+        if self.fetchVideosParam != nil {
+            let childVideoVC = VideoTableViewController()
+            self.addChildViewController(childVideoVC)
+            childVideoVC.didMoveToParentViewController(self)
+            childVideoVC.view.frame = childViewRect
+            self.view.addSubview(childVideoVC.view)
+        }
+        else {
+            // TODO - Settings Page
+            let settingsVC = UIViewController()
+            settingsVC.view.frame = childViewRect
+            self.view.addSubview(settingsVC.view)
         }
         
-//        childViewController = UIViewController()
-//        childViewController!.view.frame = CGRectMake(0, 54, self.view.frame.width, self.view.frame.height - 54)
-//        childViewController!.view.backgroundColor = UIColor.blackColor()
+//        self.childViewController = VideoTableViewController()
         
-        self.view.addSubview(Test1.view)
-        
+        if childViewController != nil {
+            self.addChildViewController(self.childViewController!)
+            self.childViewController!.didMoveToParentViewController(self)
+            self.childViewController!.view.frame = CGRectMake(0, navHeight, screenWidth, screenHeight)
+            self.view.addSubview(self.childViewController!.view)
+        }
 
     }
     

@@ -18,7 +18,6 @@
 		D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */; };
 		D612056E1C726261006B7058 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056D1C726261006B7058 /* HttpHelper.swift */; };
 		D61205701C72630B006B7058 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056F1C72630B006B7058 /* ApiKeys.swift */; };
-		D641B4541C778C8800029DEA /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4531C778C8800029DEA /* UserTableViewController.swift */; };
 		D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4551C77A9A700029DEA /* ScrollViewController.swift */; };
 		D641B4651C77E75100029DEA /* ScrollViewChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */; };
 		D641B4741C78374100029DEA /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4731C78374100029DEA /* VideoTableViewController.swift */; };
@@ -42,7 +41,6 @@
 		D612056D1C726261006B7058 /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		D612056F1C72630B006B7058 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		D641B44B1C75364600029DEA /* AWSBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWSBridgingHeader.h; sourceTree = "<group>"; };
-		D641B4531C778C8800029DEA /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		D641B4551C77A9A700029DEA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewChildVC.swift; sourceTree = "<group>"; };
 		D641B4731C78374100029DEA /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */,
 				D641B4731C78374100029DEA /* VideoTableViewController.swift */,
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
-				D641B4531C778C8800029DEA /* UserTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -275,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D641B4541C778C8800029DEA /* UserTableViewController.swift in Sources */,
 				D61205701C72630B006B7058 /* ApiKeys.swift in Sources */,
 				D60F4A271C6F0D42005C80CD /* EachVideoTableViewCell.swift in Sources */,
 				D60F4A221C6EEA9F005C80CD /* Video.swift in Sources */,
