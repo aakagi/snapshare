@@ -59,6 +59,8 @@ app.post('/test', function(req, res) {
   });
 })
 
+console.log("here");
+
 // User management
 app.post('/user/auth', userController.auth); // account & generate token
 app.post('/user/login', userController.login); // login, returns user doc

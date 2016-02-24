@@ -79,7 +79,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
                     // Convert result data to string
                     resDataString = String(data: data!, encoding: NSUTF8StringEncoding)!
                     // Make that into a dictionary
-                    let resDictionary = httpHelper.convertStringToDictionary(resDataString!)
+                    let resDictionary = httpHelper.convertJsonStringToDictionary(resDataString!)
                     // Get the parts of the dictionary and assign them to variables
                     self.generatedCode = "\(resDictionary!["accessToken"]!)"
                     self.snapname = snapname
@@ -90,7 +90,8 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 dispatch_async(dispatch_get_main_queue()) {
-                    print("error!")
+                    self.presentError("Error", message: "Something went wrong. Make sure you're connected to the internet, otherwise, I have no clue.")
+                    print(err)
                 }
             }
         }
@@ -108,6 +109,12 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         else {
             return false
         }
+    }
+    
+    func presentError(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

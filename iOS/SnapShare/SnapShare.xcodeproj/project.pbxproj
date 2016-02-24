@@ -45,6 +45,8 @@
 		D641B4C51C7A99C100029DEA /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B41C7A99C100029DEA /* AWSSNS.framework */; };
 		D641B4C61C7A99C100029DEA /* AWSSQS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B51C7A99C100029DEA /* AWSSQS.framework */; };
 		D641B4C81C7A99DA00029DEA /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4C71C7A99DA00029DEA /* AWSCognito.framework */; };
+		D641B4D01C7BD68C00029DEA /* TestPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */; };
+		D641B4D21C7D4A7900029DEA /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		D641B4B41C7A99C100029DEA /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSNS.framework"; sourceTree = "<group>"; };
 		D641B4B51C7A99C100029DEA /* AWSSQS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSQS.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSQS.framework"; sourceTree = "<group>"; };
 		D641B4C71C7A99DA00029DEA /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = "aws-ios-sdk-2.3.5/frameworks/extras/AWSCognito.framework"; sourceTree = "<group>"; };
+		D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPickerViewController.swift; sourceTree = "<group>"; };
+		D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +181,6 @@
 		D60F49E81C6D7601005C80CD /* SnapShare */ = {
 			isa = PBXGroup;
 			children = (
-				D612056F1C72630B006B7058 /* ApiKeys.swift */,
 				D641B4501C75BAC000029DEA /* Views */,
 				D641B44F1C75BA9C00029DEA /* Controllers */,
 				D641B44E1C75BA9000029DEA /* Models */,
@@ -190,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				D641B44B1C75364600029DEA /* AWSBridgingHeader.h */,
+				D612056F1C72630B006B7058 /* ApiKeys.swift */,
 				D60F49E91C6D7601005C80CD /* AppDelegate.swift */,
 				D60F49F51C6D7601005C80CD /* Info.plist */,
 			);
@@ -199,6 +203,8 @@
 		D641B44E1C75BA9000029DEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */,
+				D612056D1C726261006B7058 /* HttpHelper.swift */,
 				D60F4A241C6EF1F6005C80CD /* User.swift */,
 				D60F4A211C6EEA9F005C80CD /* Video.swift */,
 			);
@@ -208,7 +214,6 @@
 		D641B44F1C75BA9C00029DEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D612056D1C726261006B7058 /* HttpHelper.swift */,
 				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
 				D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */,
 				D641B4551C77A9A700029DEA /* ScrollViewController.swift */,
@@ -224,6 +229,7 @@
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
 				D60F49F21C6D7601005C80CD /* LaunchScreen.storyboard */,
 				D60F49ED1C6D7601005C80CD /* Main.storyboard */,
+				D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */,
 				D60F49F01C6D7601005C80CD /* Assets.xcassets */,
 			);
 			name = Views;
@@ -306,7 +312,9 @@
 				D60F4A221C6EEA9F005C80CD /* Video.swift in Sources */,
 				D612056E1C726261006B7058 /* HttpHelper.swift in Sources */,
 				D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */,
+				D641B4D01C7BD68C00029DEA /* TestPickerViewController.swift in Sources */,
 				D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */,
+				D641B4D21C7D4A7900029DEA /* HelperFunctions.swift in Sources */,
 				D641B4741C78374100029DEA /* VideoTableViewController.swift in Sources */,
 				D641B4651C77E75100029DEA /* ScrollViewChildVC.swift in Sources */,
 				D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */,

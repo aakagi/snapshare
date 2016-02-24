@@ -44,7 +44,7 @@ struct User {
                         // Convert result data to string
                         resDataString = String(data: data!, encoding: NSUTF8StringEncoding)!
                         // Make that into a dictionary
-                        let resDictionary = httpHelper.convertStringToDictionary(resDataString!)
+                        let resDictionary = httpHelper.convertJsonStringToDictionary(resDataString!)
                         // Get the parts of the dictionary and assign them to variables
                         let userSnapname = "\(resDictionary!["snapname"]!)"
                         let userAuthCode = "\(resDictionary!["accessToken"]!)"

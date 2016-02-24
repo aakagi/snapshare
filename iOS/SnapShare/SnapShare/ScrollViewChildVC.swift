@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
+import MobileCoreServices
+import AssetsLibrary
+
+class ScrollViewChildVC: UIViewController, UINavigationBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var parentScrollView: UIScrollView?
     var leftButtonString: String?
@@ -17,6 +20,9 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
     var childViewController: UIViewController?
     
     var fetchVideosParam: String?
+    
+    
+    let tempImage = UIImageView(frame: CGRectMake(80,120,200,200))
     
 
     override func viewDidLoad() {
@@ -53,6 +59,13 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
         // Make the navigation bar a subview of the current view controller
         self.view.addSubview(navigationBar)
         
+        
+        self.view.addSubview(tempImage)
+        
+        
+        
+        
+        
         let uploadButtonHeight = CGFloat(50)
         
         let uploadButtonRect = CGRectMake(0, screenHeight - uploadButtonHeight, screenWidth, uploadButtonHeight)
@@ -61,6 +74,20 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
         uploadButton.backgroundColor = UIColor.blueColor()
         uploadButton.setTitle("Upload My Story", forState: UIControlState.Normal)
         uploadButton.addTarget(self, action: "test", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         let childViewRect = CGRectMake(0, navHeight, screenWidth, screenHeight - uploadButtonHeight)
         
@@ -76,17 +103,66 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
             // TODO - Settings Page
             let settingsVC = UIViewController()
             settingsVC.view.frame = childViewRect
-            self.view.addSubview(settingsVC.view)
+//            self.view.addSubview(settingsVC.view)
         }
         
 
     }
     
     func test() {
-        print("here")
+
+        
+//        let videoPicker = UIImagePickerController()
+//
+//        videoPicker.delegate = self
+//        
+//
+//        
+//        videoPicker.sourceType = .SavedPhotosAlbum
+//        videoPicker.mediaTypes = [kUTTypeMovie as String, kUTTypeImage as String]
+//        
+//        videoPicker.videoMaximumDuration = 5.0
+//        
+//        
+//        self.presentViewController(videoPicker, animated: true, completion: nil)
         
         downloadImage("profile.jpg")
         
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        let mediaType:AnyObject? = info[UIImagePickerControllerMediaType]
+        
+        
+        if let type: AnyObject = mediaType {
+            if type is String {
+                
+                let stringType = type as! String
+                if stringType == kUTTypeMovie as String {
+                    let urlOfVideo = info[UIImagePickerControllerMediaURL] as? NSURL
+                    if let url = urlOfVideo {
+                        
+                        print(url)
+                        
+                        // Save to cloud
+                        // Make API request to save video
+                        
+                    }
+                }
+                else if stringType == kUTTypeImage as String {
+                    let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                    print("here2")
+                    tempImage.image = image
+                    
+                    
+                }
+                
+            }
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     
@@ -97,7 +173,7 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
         //downloading image
         
         
-        let S3BucketName: String = "your_s3_bucketName"
+        let S3BucketName: String = ApiKeys.S3BucketName
         let S3DownloadKeyName: String = key
         
         let expression = AWSS3TransferUtilityDownloadExpression()
@@ -149,13 +225,15 @@ class ScrollViewChildVC: UIViewController, UINavigationBarDelegate {
                 //    self.statusLabel.text = "Starting Download"
                 //NSLog("Download Starting!")
                 // Do something with uploadTask.
-                /*
-                dispatch_async(dispatch_get_main_queue(), {
-                self.colView.reloadData()
-                })
-                */
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    self.colView.reloadData()
+//                })
+//                let image = task.result as! UIImage
                 
-                print(task.result)
+//                let imageData: NSData = UIImageJPEGRepresentation(task.result, 1.0)
+                
+                
+//                print(image)
                 
             }
             return nil;

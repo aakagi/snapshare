@@ -84,12 +84,13 @@ class AuthCodeViewController: UIViewController {
                 self.loggedInUser = resultUser!
                 
                 // TODO - Set NSUserDefaults to store session
-                // let userSessionKey = self.loggedInUser.sessionKey
+//                 let userSessionKey = self.loggedInUser.sessionKey
                 // NSUserDefaults.standardUserDefaults().setObject(, forKey: "storedUser")
                 
                 self.performSegueWithIdentifier("SegueToMain", sender: self)
             }
         })
+        
     }
     
     func presentError(title: String, message: String) {

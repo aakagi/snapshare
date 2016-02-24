@@ -32,6 +32,7 @@ module.exports = {
         }, function(err) {
           if(!err) {
             // sendCode(newToken);
+            console.log(newToken);
             res.send({
               _id: doc._id,
               accessToken: newToken
