@@ -3,12 +3,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var videoSchema = new Schema({
-  user: String,
-  created: [Date],
+
+  userId: String,
+  userSnapname: String,
+  created: Number,
   videoUrl: String,
   views: Number,
   likes: Number,
   reported: Number
+
 });
 
 var Videos = mongoose.model('videos', videoSchema);

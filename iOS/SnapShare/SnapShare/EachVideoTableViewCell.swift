@@ -23,6 +23,8 @@ class EachVideoTableViewCell: UITableViewCell {
     var player: AVPlayer?
     var playerItem: AVPlayerItem?
     
+    var testAsset: AVAsset?
+    
     func updateUI() {
         
         // Makes size of video player the exact size of an iphone camera in portrait mode
@@ -32,6 +34,8 @@ class EachVideoTableViewCell: UITableViewCell {
         // Create video player
         let url = NSURL(string: videoObj!.videoUrl)
         playerItem = AVPlayerItem(URL: url!)
+        
+//        playerItem = AVPlayerItem(asset: testAsset!)
         player = AVPlayer(playerItem: playerItem!)
         playerLayer = AVPlayerLayer(player: player!)
         playerLayer!.frame = videoSizeRect

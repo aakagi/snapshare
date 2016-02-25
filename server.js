@@ -59,16 +59,15 @@ app.post('/test', function(req, res) {
   });
 })
 
-console.log("here");
-
 // User management
 app.post('/user/auth', userController.auth); // account & generate token
 app.post('/user/login', userController.login); // login, returns user doc
 app.get('/user/logout', userController.logout); // log out
 app.post('/user/scrname', userController.scrname); // update screen name
 // User video routes
-app.get('/videos/user', videoController.getUserVideos); // get my videos
+app.get('/videos/user', videoController.getUserVideos); // get a user's videos
 app.post('/videos/user', videoController.postVideo); // post or update video
+app.put('/videos/user', videoController.updateVideo); // post or update video
 app.delete('/videos/user', videoController.deleteVideo); // delete video
 // Not related to active user
 app.get('/videos/top', videoController.getTopVideos); // get top videos

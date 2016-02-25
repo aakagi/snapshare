@@ -5,73 +5,43 @@ Comprehensive Todo List In Order to Finish By 2/19
 4 Days Remaining 
 ----------------
 
-2/17
+Today
+- Set up promises
+- POST video
+- PUT video
+- GET topVideos
 
-CRUSH AWS.
+- Get json of top 10 videos from iOS and pass them through
+- Add video player buttons
+- Big video player
+- Settings page, start with logout
 
-- Figure out how to retrieve AWS videos
-
-- Store usertoken & figure out sessions
-
-- Create a temporary user and video display ViewController
-
-- Build Video model
-  - getTopVideos()
-  - getNewVideos()
-  - getUserVideosWithSnapname(snapname)
+Soon
+- Build Video model fetchVideosFor(type) {"t" or "n" or user)
+- Generate session tokens
+- Save sessions
 
 
-2/18
-- Build video upload
 
-2/19
-- Build a beautiful custom video player.
-
-2/20
-- Buffer
+Later
+- Upload a video from app
 - iOS dev account
-
-2/21
-- Build website with react
-- Test flight
-
-2/22
-- Settings page, etc
-
-Eventually
-- Build settings page
-  - Logout
-
-- Optimize S3 requests with cloudfront
-
-- Get server to MVP
-
-- Push notifications
-
-- Collect Assets
-
-
-
-
-2/23
+- Save downloaded videos & memory management?
+- Persist data, refresh, etc
+- Pretty UI & Assets
 - Testing
 
-2/24
-- Ship
 
-2/25
-- Analytics
-
-2/26
+Future
+- Optimize S3 requests with cloudfront
+- Push notifications
 - Optimize AWS
-
-2/27
-- Get a meeting with Danielle ASAP
-
-2/28
+- Test flight
+- Build website with react
+- Analytics
+- Get a meeting with Danielle
 - Marketing materials
 
-2/29
 
 3/10
 - Secure at least $1000 or go under

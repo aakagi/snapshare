@@ -81,8 +81,12 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
                     // Make that into a dictionary
                     let resDictionary = httpHelper.convertJsonStringToDictionary(resDataString!)
                     // Get the parts of the dictionary and assign them to variables
-                    self.generatedCode = "\(resDictionary!["accessToken"]!)"
+
+//                    self.generatedCode = "\(resDictionary!["accessToken"]!)"
                     self.snapname = snapname
+                    
+                    print("\(resDictionary!["accessToken"]!)")
+                    print(snapname)
                     
                     self.performSegueWithIdentifier("GoToCodeVC", sender: self)
                     
@@ -122,7 +126,7 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let destVC = segue.destinationViewController as! AuthCodeViewController
-        destVC.actualCode = sender?.generatedCode!
+//        destVC.actualCode = sender?.generatedCode!
         destVC.snapname = sender?.snapname
         
     }

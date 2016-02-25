@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
-               BuildableName = "SnapShare.app"
-               BlueprintName = "SnapShare"
-               ReferencedContainer = "container:SnapShare.xcodeproj">
+               BuildableName = "Major Key.app"
+               BlueprintName = "Major Key"
+               ReferencedContainer = "container:Major Key.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
-            BuildableName = "SnapShare.app"
-            BlueprintName = "SnapShare"
-            ReferencedContainer = "container:SnapShare.xcodeproj">
+            BuildableName = "Major Key.app"
+            BlueprintName = "Major Key"
+            ReferencedContainer = "container:Major Key.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
-            BuildableName = "SnapShare.app"
-            BlueprintName = "SnapShare"
-            ReferencedContainer = "container:SnapShare.xcodeproj">
+            BuildableName = "Major Key.app"
+            BlueprintName = "Major Key"
+            ReferencedContainer = "container:Major Key.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D60F49E51C6D7601005C80CD"
-            BuildableName = "SnapShare.app"
-            BlueprintName = "SnapShare"
-            ReferencedContainer = "container:SnapShare.xcodeproj">
+            BuildableName = "Major Key.app"
+            BlueprintName = "Major Key"
+            ReferencedContainer = "container:Major Key.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

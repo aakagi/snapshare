@@ -16,7 +16,7 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Video.getTopVideos(3, result: { (videoArray, error) in
+        Video.fetchVideosFor("t", result: { (videoArray, error) in
             self.videos.insert(videoArray, atIndex: 0)
         })
     }
@@ -60,6 +60,69 @@ class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
         //        }
         
     }
+    
+    
+    
+    
+    func downloadImage(key: String){
+        
+        var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+        
+        let S3BucketName: String = ApiKeys.S3BucketName
+        let S3DownloadKeyName: String = key
+        
+        let expression = AWSS3TransferUtilityDownloadExpression()
+        expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
+            dispatch_async(dispatch_get_main_queue(), {
+                let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+                //self.progressView.progress = progress
+                //   self.statusLabel.text = "Downloading..."
+                NSLog("Progress is: %f",progress)
+            })
+        }
+        
+        
+        
+        completionHandler = { (task, location, data, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                if ((error) != nil){
+                    NSLog("Failed with error")
+                    NSLog("Error: %@",error!);
+                    //   self.statusLabel.text = "Failed"
+                }
+                    //                    else if(self.progressView.progress != 1.0) {
+                    //                    //    self.statusLabel.text = "Failed"
+                    //                    NSLog("Error: Failed - Likely due to invalid region / filename")
+                    //                    }
+                else{
+                    
+                    //                    let dataAsImg = UIImage(data: data!)
+                    
+                    //                    self.tempImage.image = dataAsImg
+                    print("Success! - In completionHandler")
+                }
+            })
+        }
+        
+        let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
+        
+        transferUtility.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
+            if let error = task.error {
+                NSLog("Error: %@",error.localizedDescription);
+                //  self.statusLabel.text = "Failed"
+            }
+            if let exception = task.exception {
+                NSLog("Exception: %@",exception.description);
+                //  self.statusLabel.text = "Failed"
+            }
+            if let _ = task.result {
+                NSLog("Download Starting!")
+            }
+            return nil;
+        }
+        
+    }
+
 
     /*
     // MARK: - Navigation

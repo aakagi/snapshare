@@ -10,61 +10,69 @@ import UIKit
 
 class ScrollViewController: UIViewController, UIScrollViewDelegate {
     
-    var testScrollView: UIScrollView!
+    var baseScrollView: UIScrollView!
+    var loggedInUser: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let userDefaults = NSUserDefaults.standardUserDefaults()
+//        let sessionKey = userDefaults.dataForKey("userSessionKey")
+        print(loggedInUser!)
         
         let screenWidth = UIScreen.mainScreen().bounds.width
         let screenHeight = UIScreen.mainScreen().bounds.height
         
         // Create UIScrollView
         let scrollViewRect = CGRectMake(0, 0, screenWidth, screenHeight)
-        self.testScrollView = UIScrollView(frame: scrollViewRect)
-        self.testScrollView.delegate = self
-        self.testScrollView.backgroundColor = UIColor.blackColor()
-        self.testScrollView.pagingEnabled = true
+        self.baseScrollView = UIScrollView(frame: scrollViewRect)
+        self.baseScrollView.delegate = self
+        self.baseScrollView.backgroundColor = UIColor.blackColor()
+        self.baseScrollView.pagingEnabled = true
         
-        self.view.addSubview(testScrollView)
+        self.view.addSubview(baseScrollView)
         
         // Initialize the three VCs
-        let Test1: ScrollViewChildVC = ScrollViewChildVC()
-        let Test2: ScrollViewChildVC = ScrollViewChildVC()
-        let Test3: ScrollViewChildVC = ScrollViewChildVC()
-        self.addChildViewController(Test1)
-        self.addChildViewController(Test2)
-        self.addChildViewController(Test3)
-        Test1.didMoveToParentViewController(self)
-        Test2.didMoveToParentViewController(self)
-        Test3.didMoveToParentViewController(self)
-
-        // Nav bar items
-        Test1.rightButtonString = "Videos"
-        Test2.leftButtonString = "Settings"
-        Test2.rightButtonString = "User"
-        Test3.leftButtonString = "Videos"
+        let View1: ScrollViewChildVC = ScrollViewChildVC()
+        let View2: ScrollViewChildVC = ScrollViewChildVC()
+        let View3: ScrollViewChildVC = ScrollViewChildVC()
+        self.addChildViewController(View1)
+        self.addChildViewController(View2)
+        self.addChildViewController(View3)
+        View1.didMoveToParentViewController(self)
+        View2.didMoveToParentViewController(self)
+        View3.didMoveToParentViewController(self)
         
-        Test2.fetchVideosParam = "Something1"
-        Test3.fetchVideosParam = "Something2"
+        // Nav bar items
+        View1.rightButtonString = "Videos"
+        View2.leftButtonString = "Settings"
+        View2.rightButtonString = "User"
+        View3.leftButtonString = "Videos"
+        
+        // Temporary solution because I suck at OO programming
+        View1.scrollChildType = "Settings"
+        View2.scrollChildType = "Feed"
+        View3.scrollChildType = "User"
         
         // Set frames for the three VCs
-        Test1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
-        Test2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
-        Test3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
+        View1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
+        View2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
+        View3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
         
         // Pass down the scrollView so child knows the current view offset after swipe
-        Test1.parentScrollView = self.testScrollView
-        Test2.parentScrollView = self.testScrollView
-        Test3.parentScrollView = self.testScrollView
-
+        View1.parentScrollView = self.baseScrollView
+        View2.parentScrollView = self.baseScrollView
+        View3.parentScrollView = self.baseScrollView
+        
         // Set size of ScrollView content size on parent view
-        self.testScrollView.contentSize = CGSizeMake(screenWidth * 3, self.view.frame.height)
-        self.testScrollView.contentOffset = CGPoint(x: screenWidth, y: 0)
+        self.baseScrollView.contentSize = CGSizeMake(screenWidth * 3, self.view.frame.height)
+        self.baseScrollView.contentOffset = CGPoint(x: screenWidth, y: 0)
         
         // Add the three VCs on top of the ScrollView
-        self.testScrollView.addSubview(Test1.view)
-        self.testScrollView.addSubview(Test2.view)
-        self.testScrollView.addSubview(Test3.view)
+        self.baseScrollView.addSubview(View1.view)
+        self.baseScrollView.addSubview(View2.view)
+        self.baseScrollView.addSubview(View3.view)
         
 
     }

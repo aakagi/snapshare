@@ -31,6 +31,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             credentialsProvider: credentialsProvider)
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
         
+        
+
+//        if sessionKey != nil {
+//            print(sessionKey)
+//        }
+//        else {
+//            //            self.presentViewController(UserSignInViewController, animated: false, completion: nil)
+//            print("wat")
+//            //            self.performSegueWithIdentifier("SegueToLogin", sender: self)
+//        }
+        
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        
+//        // Override point for customization after application launch.
+//        let vc = UserSignInViewController()
+//
+//        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(PageNames.LOGIN_PAGE) as LoginPageViewController
+
+        
         return true
     }
 

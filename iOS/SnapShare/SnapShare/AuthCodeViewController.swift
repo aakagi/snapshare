@@ -21,8 +21,8 @@ class AuthCodeViewController: UIViewController {
     // - Find better fonts
     
 
-    // Set at UserSignInViewController prepareForSegue
-    var actualCode: String?
+//    // Set at UserSignInViewController prepareForSegue
+//    var actualCode: String?
     var snapname: String?
     
     var loggedInUser: User?
@@ -42,8 +42,7 @@ class AuthCodeViewController: UIViewController {
         
         // TODO - Get the actual access token and Id from UserSignInViewController
         
-        print(self.actualCode!)
-        print(self.snapname!)
+        
         
     }
     
@@ -83,8 +82,16 @@ class AuthCodeViewController: UIViewController {
                 
                 self.loggedInUser = resultUser!
                 
+                let userSessionKey: AnyObject = resultUser!.snapname
+                
                 // TODO - Set NSUserDefaults to store session
-//                 let userSessionKey = self.loggedInUser.sessionKey
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setObject(userSessionKey, forKey: "userSessionKey")
+//                userDefaults.se
+                
+//                let userSessionKey: AnyObject = defaults.objectForKey("storedUserToken")!
+                
+
                 // NSUserDefaults.standardUserDefaults().setObject(, forKey: "storedUser")
                 
                 self.performSegueWithIdentifier("SegueToMain", sender: self)
@@ -113,6 +120,13 @@ class AuthCodeViewController: UIViewController {
             currentIndex -= 1
             codeInputArray[currentIndex].text = "-"
         }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destVC = segue.destinationViewController as! ScrollViewController
+        destVC.loggedInUser = self.loggedInUser
+        
     }
     
 }

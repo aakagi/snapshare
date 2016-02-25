@@ -10,7 +10,7 @@
         <!--User Sign In View Controller-->
         <scene sceneID="8Aw-ok-cKM">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="eNO-56-HRX" customClass="UserSignInViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="eNO-56-HRX" customClass="UserSignInViewController" customModule="Major_Key" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l2j-Rv-sIi"/>
                         <viewControllerLayoutGuide type="bottom" id="foM-1d-Igj"/>
@@ -29,13 +29,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorkey" translatesAutoresizingMaskIntoConstraints="NO" id="CK8-G2-cKV">
-                                <rect key="frame" x="335" y="20" width="114" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="123" id="LMg-nM-Er6"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="114" id="tom-9t-VFe"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="740" translatesAutoresizingMaskIntoConstraints="NO" id="KiJ-d2-g0O">
                                 <rect key="frame" x="20" y="20" width="123" height="118"/>
                             </view>
@@ -51,7 +44,7 @@
                                     <fragment content="Become Snapchat Famous">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="25" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="25" name="HelveticaNeue-Italic"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -76,6 +69,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="majorkey" translatesAutoresizingMaskIntoConstraints="NO" id="CK8-G2-cKV">
+                                <rect key="frame" x="335" y="20" width="114" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="123" id="LMg-nM-Er6"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="114" id="tom-9t-VFe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -171,7 +171,7 @@
         <!--Auth Code View Controller-->
         <scene sceneID="Wz7-Kd-Hq7">
             <objects>
-                <viewController storyboardIdentifier="CodeVC" id="4Zb-36-NTx" customClass="AuthCodeViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CodeVC" id="4Zb-36-NTx" customClass="AuthCodeViewController" customModule="Major_Key" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7fi-b1-0Zl"/>
                         <viewControllerLayoutGuide type="bottom" id="H1Y-VJ-HiJ"/>
@@ -582,7 +582,7 @@
         <!--Scroll View Controller-->
         <scene sceneID="wNd-ZF-QYG">
             <objects>
-                <viewController id="Jjl-PE-hyu" customClass="ScrollViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jjl-PE-hyu" customClass="ScrollViewController" customModule="Major_Key" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cgF-om-Tzi"/>
                         <viewControllerLayoutGuide type="bottom" id="cd4-YO-9a1"/>
@@ -592,6 +592,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="eNO-56-HRX" kind="show" identifier="SegueToLogin" id="BAT-GL-pjG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRb-Pf-cuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -600,7 +603,7 @@
         <!--Test Picker View Controller-->
         <scene sceneID="IlP-M3-r0c">
             <objects>
-                <viewController id="UX9-HS-ySD" customClass="TestPickerViewController" customModule="SnapShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UX9-HS-ySD" customClass="TestPickerViewController" customModule="Major_Key" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zcU-b1-L9v"/>
                         <viewControllerLayoutGuide type="bottom" id="UZL-Hj-VYN"/>
@@ -617,6 +620,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="majorkey" width="1360" height="1326"/>
+        <image name="majorkey" width="680" height="663"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BAT-GL-pjG"/>
+    </inferredMetricsTieBreakers>
 </document>
