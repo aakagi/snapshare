@@ -70,11 +70,11 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         
         nav2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, nav2.navHeight)
         View2.view.frame = CGRectMake(screenWidth * 1, nav2.navHeight, screenWidth, screenHeight - button2.buttonHeight)
-        button2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, button2.buttonHeight)
+        button2.frame = CGRectMake(screenWidth * 1, screenHeight - button2.buttonHeight, screenWidth, button2.buttonHeight)
         
         print(button2.buttonHeight)
-
-//        self.baseScrollView.addSubview(View2.view)
+        
+        self.baseScrollView.addSubview(View2.view)
         self.baseScrollView.addSubview(button2)
         self.baseScrollView.addSubview(nav2)
         
@@ -95,7 +95,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
 
         nav3.frame = CGRectMake(screenWidth * 2, 0, screenWidth, nav3.navHeight)
         View3.view.frame = CGRectMake(screenWidth * 2, nav3.navHeight, screenWidth, screenHeight - button3.buttonHeight)
-        button3.frame = CGRectMake(screenWidth * 2, 0, screenWidth, button3.buttonHeight)
+        button3.frame = CGRectMake(screenWidth * 2, screenHeight - button3.buttonHeight, screenWidth, button3.buttonHeight)
         self.baseScrollView.addSubview(View3.view)
         self.baseScrollView.addSubview(button3)
         self.baseScrollView.addSubview(nav3)
