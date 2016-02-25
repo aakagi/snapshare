@@ -14,12 +14,14 @@ class NavScrollBar: UINavigationBar, UINavigationBarDelegate {
 
     var leftButtonString: String?
     var rightButtonString: String?
-
-    var parentVC: ScrollViewChildVC? {
+    
+    var parentScrollView: UIScrollView? {
         didSet {
             initWorkaround()
         }
     }
+
+
         
     func initWorkaround() {
         
@@ -51,15 +53,16 @@ class NavScrollBar: UINavigationBar, UINavigationBarDelegate {
     
     func navButtonClicked(sender: UIBarButtonItem) {
         // Goes right by default
-        let currentX = self.parentVC!.parentScrollView!.contentOffset.x
-        var screenDelta = self.parentVC!.parentScrollView!.frame.width
+        print(self.parentScrollView!.contentOffset.x)
+        let currentX = self.parentScrollView!.contentOffset.x
+        var screenDelta = self.parentScrollView!.frame.width
         
         if sender.tag == 0 {
             screenDelta *= -1
         }
         
         UIView.animateWithDuration(0.3, animations: {() in
-            self.parentVC!.parentScrollView!.contentOffset = CGPoint(x: currentX + screenDelta, y: 0)
+            self.parentScrollView!.contentOffset = CGPoint(x: currentX + screenDelta, y: 0)
         })
     }
 }

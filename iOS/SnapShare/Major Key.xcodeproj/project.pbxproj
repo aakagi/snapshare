@@ -19,7 +19,6 @@
 		D612056E1C726261006B7058 /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056D1C726261006B7058 /* HttpHelper.swift */; };
 		D61205701C72630B006B7058 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056F1C72630B006B7058 /* ApiKeys.swift */; };
 		D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4551C77A9A700029DEA /* ScrollViewController.swift */; };
-		D641B4651C77E75100029DEA /* ScrollViewChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */; };
 		D641B4741C78374100029DEA /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4731C78374100029DEA /* VideoTableViewController.swift */; };
 		D641B49A1C7A95EF00029DEA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4991C7A95EF00029DEA /* libsqlite3.tbd */; };
 		D641B49C1C7A95FD00029DEA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B49B1C7A95FD00029DEA /* libz.tbd */; };
@@ -48,8 +47,9 @@
 		D641B4D01C7BD68C00029DEA /* TestPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */; };
 		D641B4D21C7D4A7900029DEA /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */; };
 		D641B4D61C7ECA8200029DEA /* UserVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D51C7ECA8200029DEA /* UserVideosViewController.swift */; };
-		D641B4D81C7EE21100029DEA /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D71C7EE21100029DEA /* TestButton.swift */; };
+		D641B4D81C7EE21100029DEA /* UploadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D71C7EE21100029DEA /* UploadButton.swift */; };
 		D641B4DA1C7EE82F00029DEA /* NavScrollBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D91C7EE82F00029DEA /* NavScrollBar.swift */; };
+		D641B4DC1C7EF9E700029DEA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4DB1C7EF9E700029DEA /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		D612056F1C72630B006B7058 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		D641B44B1C75364600029DEA /* AWSBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWSBridgingHeader.h; sourceTree = "<group>"; };
 		D641B4551C77A9A700029DEA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewChildVC.swift; sourceTree = "<group>"; };
 		D641B4731C78374100029DEA /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		D641B4991C7A95EF00029DEA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D641B49B1C7A95FD00029DEA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -97,8 +96,9 @@
 		D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPickerViewController.swift; sourceTree = "<group>"; };
 		D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		D641B4D51C7ECA8200029DEA /* UserVideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVideosViewController.swift; sourceTree = "<group>"; };
-		D641B4D71C7EE21100029DEA /* TestButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
+		D641B4D71C7EE21100029DEA /* UploadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadButton.swift; sourceTree = "<group>"; };
 		D641B4D91C7EE82F00029DEA /* NavScrollBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavScrollBar.swift; sourceTree = "<group>"; };
+		D641B4DB1C7EF9E700029DEA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,9 +224,7 @@
 				D61205681C71747D006B7058 /* UserSignInViewController.swift */,
 				D612056A1C71B0CC006B7058 /* AuthCodeViewController.swift */,
 				D641B4551C77A9A700029DEA /* ScrollViewController.swift */,
-				D641B4631C77E75100029DEA /* ScrollViewChildVC.swift */,
-				D641B4D91C7EE82F00029DEA /* NavScrollBar.swift */,
-				D641B4D71C7EE21100029DEA /* TestButton.swift */,
+				D641B4DB1C7EF9E700029DEA /* SettingsViewController.swift */,
 				D641B4731C78374100029DEA /* VideoTableViewController.swift */,
 				D641B4D51C7ECA8200029DEA /* UserVideosViewController.swift */,
 			);
@@ -237,6 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
+				D641B4D91C7EE82F00029DEA /* NavScrollBar.swift */,
+				D641B4D71C7EE21100029DEA /* UploadButton.swift */,
 				D60F49F21C6D7601005C80CD /* LaunchScreen.storyboard */,
 				D60F49ED1C6D7601005C80CD /* Main.storyboard */,
 				D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */,
@@ -323,13 +323,13 @@
 				D612056E1C726261006B7058 /* HttpHelper.swift in Sources */,
 				D641B4D61C7ECA8200029DEA /* UserVideosViewController.swift in Sources */,
 				D641B4DA1C7EE82F00029DEA /* NavScrollBar.swift in Sources */,
-				D641B4D81C7EE21100029DEA /* TestButton.swift in Sources */,
+				D641B4D81C7EE21100029DEA /* UploadButton.swift in Sources */,
 				D612056B1C71B0CC006B7058 /* AuthCodeViewController.swift in Sources */,
 				D641B4D01C7BD68C00029DEA /* TestPickerViewController.swift in Sources */,
 				D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */,
 				D641B4D21C7D4A7900029DEA /* HelperFunctions.swift in Sources */,
 				D641B4741C78374100029DEA /* VideoTableViewController.swift in Sources */,
-				D641B4651C77E75100029DEA /* ScrollViewChildVC.swift in Sources */,
+				D641B4DC1C7EF9E700029DEA /* SettingsViewController.swift in Sources */,
 				D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */,
 				D60F4A251C6EF1F6005C80CD /* User.swift in Sources */,
 				D61205691C71747D006B7058 /* UserSignInViewController.swift in Sources */,

@@ -31,66 +31,75 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         self.baseScrollView.backgroundColor = UIColor.blackColor()
         self.baseScrollView.pagingEnabled = true
         
-        self.view.addSubview(baseScrollView)
-        
-        // Initialize the three VCs
-        let View1: ScrollViewChildVC = ScrollViewChildVC()
-        let View2: ScrollViewChildVC = ScrollViewChildVC()
-        let View3: ScrollViewChildVC = ScrollViewChildVC()
-        self.addChildViewController(View1)
-        self.addChildViewController(View2)
-        self.addChildViewController(View3)
-        View1.didMoveToParentViewController(self)
-        View2.didMoveToParentViewController(self)
-        View3.didMoveToParentViewController(self)
-        
-        // Nav bar items
-        View1.rightButtonString = "Videos"
-        View2.leftButtonString = "Settings"
-        View2.rightButtonString = "User"
-        View3.leftButtonString = "Videos"
-        
-        // Temporary solution because I suck at OO programming
-        View1.scrollChildType = "Settings"
-        View2.scrollChildType = "Feed"
-        View3.scrollChildType = "User"
-        
-        // Set frames for the three VCs
-        View1.view.frame = CGRectMake(self.view.frame.width * 0, 0, screenWidth, screenHeight)
-        View2.view.frame = CGRectMake(self.view.frame.width * 1, 0, screenWidth, screenHeight)
-        View3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
-        
-        // Pass down the scrollView so child knows the current view offset after swipe
-        View1.parentScrollView = self.baseScrollView
-        View2.parentScrollView = self.baseScrollView
-        View3.parentScrollView = self.baseScrollView
-        
-        // Set size of ScrollView content size on parent view
+        // Set contentsize of view to be 3 views wide
         self.baseScrollView.contentSize = CGSizeMake(screenWidth * 3, self.view.frame.height)
         self.baseScrollView.contentOffset = CGPoint(x: screenWidth, y: 0)
         
-        // Add the three VCs on top of the ScrollView
-        self.baseScrollView.addSubview(View1.view)
-        self.baseScrollView.addSubview(View2.view)
-        self.baseScrollView.addSubview(View3.view)
+        self.view.addSubview(baseScrollView)
         
+        
+        
+        
+        // Settings Page
+        let View1: UIViewController = UIViewController()
+        self.addChildViewController(View1)
+        View1.didMoveToParentViewController(self)
+        
+        let nav1 = NavScrollBar()
+        nav1.rightButtonString = "Videos"
+        nav1.parentScrollView = self.baseScrollView
+        
+        nav1.frame = CGRectMake(screenWidth * 0, 0, screenWidth, nav1.navHeight)
+        View1.view.frame = CGRectMake(screenWidth * 0, nav1.navHeight, screenWidth, screenHeight)
+        self.baseScrollView.addSubview(View1.view)
+        self.baseScrollView.addSubview(nav1)
+        
+        
+        // Main Video Feed
+        let View2: VideoTableViewController = VideoTableViewController()
+        self.addChildViewController(View2)
+        View2.didMoveToParentViewController(self)
+        
+        let nav2 = NavScrollBar()
+        nav2.leftButtonString = "Settings"
+        nav2.rightButtonString = "User"
+        nav2.parentScrollView = self.baseScrollView
+        
+        let button2 = UploadButton()
+        button2.parentVC = View2
+        
+        nav2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, nav2.navHeight)
+        View2.view.frame = CGRectMake(screenWidth * 1, nav2.navHeight, screenWidth, screenHeight - button2.buttonHeight)
+        button2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, button2.buttonHeight)
+        
+        print(button2.buttonHeight)
+
+//        self.baseScrollView.addSubview(View2.view)
+        self.baseScrollView.addSubview(button2)
+        self.baseScrollView.addSubview(nav2)
+        
+        
+        // User Videos
+        let View3: UserVideosViewController = UserVideosViewController()
+        self.addChildViewController(View3)
+        View3.didMoveToParentViewController(self)
+        
+        let nav3 = NavScrollBar()
+        nav3.leftButtonString = "Videos"
+        nav3.parentScrollView = self.baseScrollView
+        
+        let button3 = UploadButton()
+        button3.parentVC = View3
+        
+        View3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
+
+        nav3.frame = CGRectMake(screenWidth * 2, 0, screenWidth, nav3.navHeight)
+        View3.view.frame = CGRectMake(screenWidth * 2, nav3.navHeight, screenWidth, screenHeight - button3.buttonHeight)
+        button3.frame = CGRectMake(screenWidth * 2, 0, screenWidth, button3.buttonHeight)
+        self.baseScrollView.addSubview(View3.view)
+        self.baseScrollView.addSubview(button3)
+        self.baseScrollView.addSubview(nav3)
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

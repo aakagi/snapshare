@@ -600,24 +600,6 @@
             </objects>
             <point key="canvasLocation" x="633" y="899"/>
         </scene>
-        <!--Test Picker View Controller-->
-        <scene sceneID="IlP-M3-r0c">
-            <objects>
-                <viewController id="UX9-HS-ySD" customClass="TestPickerViewController" customModule="Major_Key" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zcU-b1-L9v"/>
-                        <viewControllerLayoutGuide type="bottom" id="UZL-Hj-VYN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Z1-9f-elu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Prz-tE-ygz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1423" y="899"/>
-        </scene>
     </scenes>
     <resources>
         <image name="majorkey" width="680" height="663"/>

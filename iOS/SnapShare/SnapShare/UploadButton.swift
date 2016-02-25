@@ -14,7 +14,7 @@ import AssetsLibrary
 
 class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var parentVC: ScrollViewChildVC? {
+    var parentVC: UIViewController? {
         didSet {
             initWorkaround()
         }
@@ -68,9 +68,8 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
                     }
                 }
                 else if stringType == kUTTypeImage as String {
-                    let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+//                    let image = info[UIImagePickerControllerOriginalImage] as? UIImage
                     
-                    parentVC!.tempImage.image = image
                 }
                 
             }

@@ -8,8 +8,10 @@
 
 import UIKit
 
-class VideoTableViewController: UITableViewController, UINavigationBarDelegate {
+class VideoTableViewController: UITableViewController {
     var videos = [[Video]]()
+    
+    var navBar: NavScrollBar?
     
     // Mark: View Controller Lifecycle
     
