@@ -57,13 +57,13 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         
         // Creates alert controller
         let alertController = UIAlertController(
-            title: "Available Actions",
+            title: "Upload Your Snap Story",
             message: nil,
             preferredStyle: .ActionSheet)
         
         // Select this for uploading a new video
         let uploadNewVideo = UIAlertAction(
-            title: "Upload A New Video",
+            title: "Add A New Story",
             style: .Default) { (action) -> Void in
                  self.selectPictures()
         }
@@ -71,7 +71,7 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         
         // Select this for updating an old video
         let updateOldVideo = UIAlertAction(
-            title: "Upload Your Current Story",
+            title: "Update Current Story",
             style: .Default) { (action) -> Void in
                  self.selectPictures()
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ACAB51E4C8A3686C31E503C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D5D82D73BD98BCD416DEAD /* libPods.a */; };
 		D60F49EA1C6D7601005C80CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60F49E91C6D7601005C80CD /* AppDelegate.swift */; };
 		D60F49EF1C6D7601005C80CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60F49ED1C6D7601005C80CD /* Main.storyboard */; };
 		D60F49F11C6D7601005C80CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60F49F01C6D7601005C80CD /* Assets.xcassets */; };
@@ -20,30 +21,6 @@
 		D61205701C72630B006B7058 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D612056F1C72630B006B7058 /* ApiKeys.swift */; };
 		D641B4561C77A9A700029DEA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4551C77A9A700029DEA /* ScrollViewController.swift */; };
 		D641B4741C78374100029DEA /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4731C78374100029DEA /* VideoTableViewController.swift */; };
-		D641B49A1C7A95EF00029DEA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4991C7A95EF00029DEA /* libsqlite3.tbd */; };
-		D641B49C1C7A95FD00029DEA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B49B1C7A95FD00029DEA /* libz.tbd */; };
-		D641B49E1C7A960800029DEA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B49D1C7A960800029DEA /* CFNetwork.framework */; };
-		D641B4A01C7A961100029DEA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B49F1C7A961100029DEA /* Security.framework */; };
-		D641B4A21C7A961B00029DEA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A11C7A961B00029DEA /* SystemConfiguration.framework */; };
-		D641B4A41C7A962300029DEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A31C7A962300029DEA /* UIKit.framework */; };
-		D641B4B61C7A99C100029DEA /* AWSAPIGateway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A51C7A99C000029DEA /* AWSAPIGateway.framework */; };
-		D641B4B71C7A99C100029DEA /* AWSAutoScaling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A61C7A99C000029DEA /* AWSAutoScaling.framework */; };
-		D641B4B81C7A99C100029DEA /* AWSCloudWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A71C7A99C000029DEA /* AWSCloudWatch.framework */; };
-		D641B4B91C7A99C100029DEA /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A81C7A99C000029DEA /* AWSCore.framework */; };
-		D641B4BA1C7A99C100029DEA /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4A91C7A99C000029DEA /* AWSDynamoDB.framework */; };
-		D641B4BB1C7A99C100029DEA /* AWSEC2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AA1C7A99C000029DEA /* AWSEC2.framework */; };
-		D641B4BC1C7A99C100029DEA /* AWSElasticLoadBalancing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AB1C7A99C000029DEA /* AWSElasticLoadBalancing.framework */; };
-		D641B4BD1C7A99C100029DEA /* AWSIoT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AC1C7A99C000029DEA /* AWSIoT.framework */; };
-		D641B4BE1C7A99C100029DEA /* AWSKinesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AD1C7A99C000029DEA /* AWSKinesis.framework */; };
-		D641B4BF1C7A99C100029DEA /* AWSLambda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AE1C7A99C000029DEA /* AWSLambda.framework */; };
-		D641B4C01C7A99C100029DEA /* AWSMachineLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4AF1C7A99C000029DEA /* AWSMachineLearning.framework */; };
-		D641B4C11C7A99C100029DEA /* AWSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B01C7A99C000029DEA /* AWSMobileAnalytics.framework */; };
-		D641B4C21C7A99C100029DEA /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B11C7A99C000029DEA /* AWSS3.framework */; };
-		D641B4C31C7A99C100029DEA /* AWSSES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B21C7A99C100029DEA /* AWSSES.framework */; };
-		D641B4C41C7A99C100029DEA /* AWSSimpleDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B31C7A99C100029DEA /* AWSSimpleDB.framework */; };
-		D641B4C51C7A99C100029DEA /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B41C7A99C100029DEA /* AWSSNS.framework */; };
-		D641B4C61C7A99C100029DEA /* AWSSQS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4B51C7A99C100029DEA /* AWSSQS.framework */; };
-		D641B4C81C7A99DA00029DEA /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D641B4C71C7A99DA00029DEA /* AWSCognito.framework */; };
 		D641B4D01C7BD68C00029DEA /* TestPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */; };
 		D641B4D21C7D4A7900029DEA /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */; };
 		D641B4D61C7ECA8200029DEA /* UserVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D641B4D51C7ECA8200029DEA /* UserVideosViewController.swift */; };
@@ -53,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A3CBB2C5019765CCA6B29EB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5A6AE4C6D6C2EB85F7DC9400 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		95D5D82D73BD98BCD416DEAD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60F49E61C6D7601005C80CD /* Major Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Major Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60F49E91C6D7601005C80CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D60F49EE1C6D7601005C80CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,30 +49,6 @@
 		D641B44B1C75364600029DEA /* AWSBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWSBridgingHeader.h; sourceTree = "<group>"; };
 		D641B4551C77A9A700029DEA /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		D641B4731C78374100029DEA /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
-		D641B4991C7A95EF00029DEA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D641B49B1C7A95FD00029DEA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		D641B49D1C7A960800029DEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		D641B49F1C7A961100029DEA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D641B4A11C7A961B00029DEA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D641B4A31C7A962300029DEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D641B4A51C7A99C000029DEA /* AWSAPIGateway.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAPIGateway.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSAPIGateway.framework"; sourceTree = "<group>"; };
-		D641B4A61C7A99C000029DEA /* AWSAutoScaling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSAutoScaling.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSAutoScaling.framework"; sourceTree = "<group>"; };
-		D641B4A71C7A99C000029DEA /* AWSCloudWatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCloudWatch.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSCloudWatch.framework"; sourceTree = "<group>"; };
-		D641B4A81C7A99C000029DEA /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSCore.framework"; sourceTree = "<group>"; };
-		D641B4A91C7A99C000029DEA /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSDynamoDB.framework"; sourceTree = "<group>"; };
-		D641B4AA1C7A99C000029DEA /* AWSEC2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSEC2.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSEC2.framework"; sourceTree = "<group>"; };
-		D641B4AB1C7A99C000029DEA /* AWSElasticLoadBalancing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSElasticLoadBalancing.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSElasticLoadBalancing.framework"; sourceTree = "<group>"; };
-		D641B4AC1C7A99C000029DEA /* AWSIoT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSIoT.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSIoT.framework"; sourceTree = "<group>"; };
-		D641B4AD1C7A99C000029DEA /* AWSKinesis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSKinesis.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSKinesis.framework"; sourceTree = "<group>"; };
-		D641B4AE1C7A99C000029DEA /* AWSLambda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSLambda.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSLambda.framework"; sourceTree = "<group>"; };
-		D641B4AF1C7A99C000029DEA /* AWSMachineLearning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMachineLearning.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSMachineLearning.framework"; sourceTree = "<group>"; };
-		D641B4B01C7A99C000029DEA /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileAnalytics.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSMobileAnalytics.framework"; sourceTree = "<group>"; };
-		D641B4B11C7A99C000029DEA /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSS3.framework"; sourceTree = "<group>"; };
-		D641B4B21C7A99C100029DEA /* AWSSES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSES.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSES.framework"; sourceTree = "<group>"; };
-		D641B4B31C7A99C100029DEA /* AWSSimpleDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSimpleDB.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSimpleDB.framework"; sourceTree = "<group>"; };
-		D641B4B41C7A99C100029DEA /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSNS.framework"; sourceTree = "<group>"; };
-		D641B4B51C7A99C100029DEA /* AWSSQS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSQS.framework; path = "aws-ios-sdk-2.3.5/frameworks/AWSSQS.framework"; sourceTree = "<group>"; };
-		D641B4C71C7A99DA00029DEA /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = "aws-ios-sdk-2.3.5/frameworks/extras/AWSCognito.framework"; sourceTree = "<group>"; };
 		D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPickerViewController.swift; sourceTree = "<group>"; };
 		D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		D641B4D51C7ECA8200029DEA /* UserVideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVideosViewController.swift; sourceTree = "<group>"; };
@@ -106,30 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D641B4B81C7A99C100029DEA /* AWSCloudWatch.framework in Frameworks */,
-				D641B4C41C7A99C100029DEA /* AWSSimpleDB.framework in Frameworks */,
-				D641B4C11C7A99C100029DEA /* AWSMobileAnalytics.framework in Frameworks */,
-				D641B4C61C7A99C100029DEA /* AWSSQS.framework in Frameworks */,
-				D641B4C31C7A99C100029DEA /* AWSSES.framework in Frameworks */,
-				D641B4C01C7A99C100029DEA /* AWSMachineLearning.framework in Frameworks */,
-				D641B4C81C7A99DA00029DEA /* AWSCognito.framework in Frameworks */,
-				D641B4BD1C7A99C100029DEA /* AWSIoT.framework in Frameworks */,
-				D641B4B91C7A99C100029DEA /* AWSCore.framework in Frameworks */,
-				D641B4A41C7A962300029DEA /* UIKit.framework in Frameworks */,
-				D641B4B71C7A99C100029DEA /* AWSAutoScaling.framework in Frameworks */,
-				D641B4BC1C7A99C100029DEA /* AWSElasticLoadBalancing.framework in Frameworks */,
-				D641B4BA1C7A99C100029DEA /* AWSDynamoDB.framework in Frameworks */,
-				D641B4BB1C7A99C100029DEA /* AWSEC2.framework in Frameworks */,
-				D641B4BE1C7A99C100029DEA /* AWSKinesis.framework in Frameworks */,
-				D641B4A21C7A961B00029DEA /* SystemConfiguration.framework in Frameworks */,
-				D641B4A01C7A961100029DEA /* Security.framework in Frameworks */,
-				D641B4BF1C7A99C100029DEA /* AWSLambda.framework in Frameworks */,
-				D641B4C21C7A99C100029DEA /* AWSS3.framework in Frameworks */,
-				D641B4C51C7A99C100029DEA /* AWSSNS.framework in Frameworks */,
-				D641B49E1C7A960800029DEA /* CFNetwork.framework in Frameworks */,
-				D641B49C1C7A95FD00029DEA /* libz.tbd in Frameworks */,
-				D641B49A1C7A95EF00029DEA /* libsqlite3.tbd in Frameworks */,
-				D641B4B61C7A99C100029DEA /* AWSAPIGateway.framework in Frameworks */,
+				0ACAB51E4C8A3686C31E503C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,32 +72,18 @@
 		7D673DA9EE28520A5700D90B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D641B4C71C7A99DA00029DEA /* AWSCognito.framework */,
-				D641B4A51C7A99C000029DEA /* AWSAPIGateway.framework */,
-				D641B4A61C7A99C000029DEA /* AWSAutoScaling.framework */,
-				D641B4A71C7A99C000029DEA /* AWSCloudWatch.framework */,
-				D641B4A81C7A99C000029DEA /* AWSCore.framework */,
-				D641B4A91C7A99C000029DEA /* AWSDynamoDB.framework */,
-				D641B4AA1C7A99C000029DEA /* AWSEC2.framework */,
-				D641B4AB1C7A99C000029DEA /* AWSElasticLoadBalancing.framework */,
-				D641B4AC1C7A99C000029DEA /* AWSIoT.framework */,
-				D641B4AD1C7A99C000029DEA /* AWSKinesis.framework */,
-				D641B4AE1C7A99C000029DEA /* AWSLambda.framework */,
-				D641B4AF1C7A99C000029DEA /* AWSMachineLearning.framework */,
-				D641B4B01C7A99C000029DEA /* AWSMobileAnalytics.framework */,
-				D641B4B11C7A99C000029DEA /* AWSS3.framework */,
-				D641B4B21C7A99C100029DEA /* AWSSES.framework */,
-				D641B4B31C7A99C100029DEA /* AWSSimpleDB.framework */,
-				D641B4B41C7A99C100029DEA /* AWSSNS.framework */,
-				D641B4B51C7A99C100029DEA /* AWSSQS.framework */,
-				D641B4A31C7A962300029DEA /* UIKit.framework */,
-				D641B4A11C7A961B00029DEA /* SystemConfiguration.framework */,
-				D641B49F1C7A961100029DEA /* Security.framework */,
-				D641B49D1C7A960800029DEA /* CFNetwork.framework */,
-				D641B49B1C7A95FD00029DEA /* libz.tbd */,
-				D641B4991C7A95EF00029DEA /* libsqlite3.tbd */,
+				95D5D82D73BD98BCD416DEAD /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		898732891AC6D1081FBB6DEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A3CBB2C5019765CCA6B29EB /* Pods.debug.xcconfig */,
+				5A6AE4C6D6C2EB85F7DC9400 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D60F49DD1C6D7601005C80CD = {
@@ -173,6 +92,7 @@
 				D60F49E81C6D7601005C80CD /* Major Key */,
 				D60F49E71C6D7601005C80CD /* Products */,
 				7D673DA9EE28520A5700D90B /* Frameworks */,
+				898732891AC6D1081FBB6DEE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D60F49F81C6D7601005C80CD /* Build configuration list for PBXNativeTarget "Major Key" */;
 			buildPhases = (
+				9A8529A55DE9829BBB058F88 /* Check Pods Manifest.lock */,
 				D60F49E21C6D7601005C80CD /* Sources */,
 				D60F49E31C6D7601005C80CD /* Frameworks */,
 				D60F49E41C6D7601005C80CD /* Resources */,
+				EB93C1163AB4ADAE6DA05BF3 /* Embed Pods Frameworks */,
+				454D0A914FFB7610D414FEDE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +234,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		454D0A914FFB7610D414FEDE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A8529A55DE9829BBB058F88 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB93C1163AB4ADAE6DA05BF3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D60F49E21C6D7601005C80CD /* Sources */ = {
@@ -443,6 +414,7 @@
 		};
 		D60F49F91C6D7601005C80CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3CBB2C5019765CCA6B29EB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -460,6 +432,7 @@
 		};
 		D60F49FA1C6D7601005C80CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A6AE4C6D6C2EB85F7DC9400 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

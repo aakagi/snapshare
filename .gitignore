@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 iOS/SnapShare/SnapShare/ApiKeys.swift
 iOS/SnapShare/aws-ios-sdk-*
+iOS/SnapShare/Pods
