@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let CognitoRegionType = AWSRegionType.USEast1
-        let CognitoIdentityPoolId = ApiKeys.awsCognitoKey
+        let CognitoRegionType = ApiKeys.CognitoRegionType
+        let CognitoIdentityPoolId = ApiKeys.CognitoIdentityPoolId
         
         let DefaultServiceRegionType = AWSRegionType.USWest1
         

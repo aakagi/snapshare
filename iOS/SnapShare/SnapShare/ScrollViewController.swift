@@ -74,10 +74,9 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         
         print(button2.buttonHeight)
         
+        self.baseScrollView.addSubview(nav2)
         self.baseScrollView.addSubview(View2.view)
         self.baseScrollView.addSubview(button2)
-        self.baseScrollView.addSubview(nav2)
-        
         
         // User Videos
         let View3: UserVideosViewController = UserVideosViewController()
@@ -96,10 +95,9 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         nav3.frame = CGRectMake(screenWidth * 2, 0, screenWidth, nav3.navHeight)
         View3.view.frame = CGRectMake(screenWidth * 2, nav3.navHeight, screenWidth, screenHeight - button3.buttonHeight)
         button3.frame = CGRectMake(screenWidth * 2, screenHeight - button3.buttonHeight, screenWidth, button3.buttonHeight)
+        self.baseScrollView.addSubview(nav3)
         self.baseScrollView.addSubview(View3.view)
         self.baseScrollView.addSubview(button3)
-        self.baseScrollView.addSubview(nav3)
-
     }
 
 }
