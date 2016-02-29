@@ -12,7 +12,6 @@ class UserVideosViewController: VideoTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("yooo")
         // Do any additional setup after loading the view.
     }
 

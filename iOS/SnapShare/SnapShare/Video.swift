@@ -19,10 +19,6 @@ struct Video {
     let reported: Int
     
     
-    static func uploadToS3() {
-        print("uploadSnapstory")
-    }
-        
     static func fetchVideosFor(type: String, result: (videoArray: [Video], error: String?) -> Void) {
         
         

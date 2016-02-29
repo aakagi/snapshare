@@ -19,7 +19,6 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         
 //        let userDefaults = NSUserDefaults.standardUserDefaults()
 //        let sessionKey = userDefaults.dataForKey("userSessionKey")
-        print(loggedInUser!)
         
         let screenWidth = UIScreen.mainScreen().bounds.width
         let screenHeight = UIScreen.mainScreen().bounds.height
@@ -71,8 +70,6 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         nav2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, nav2.navHeight)
         View2.view.frame = CGRectMake(screenWidth * 1, nav2.navHeight, screenWidth, screenHeight - button2.buttonHeight)
         button2.frame = CGRectMake(screenWidth * 1, screenHeight - button2.buttonHeight, screenWidth, button2.buttonHeight)
-        
-        print(button2.buttonHeight)
         
         self.baseScrollView.addSubview(nav2)
         self.baseScrollView.addSubview(View2.view)
