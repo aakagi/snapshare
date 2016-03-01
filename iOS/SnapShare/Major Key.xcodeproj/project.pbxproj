@@ -133,7 +133,6 @@
 				D641B4D11C7D4A7900029DEA /* HelperFunctions.swift */,
 				D612056D1C726261006B7058 /* HttpHelper.swift */,
 				D60F4A241C6EF1F6005C80CD /* User.swift */,
-				D60F4A211C6EEA9F005C80CD /* Video.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -157,6 +156,7 @@
 				D60F4A261C6F0D42005C80CD /* EachVideoTableViewCell.swift */,
 				D641B4D91C7EE82F00029DEA /* NavScrollBar.swift */,
 				D641B4D71C7EE21100029DEA /* UploadButton.swift */,
+				D60F4A211C6EEA9F005C80CD /* Video.swift */,
 				D60F49F21C6D7601005C80CD /* LaunchScreen.storyboard */,
 				D60F49ED1C6D7601005C80CD /* Main.storyboard */,
 				D641B4CF1C7BD68C00029DEA /* TestPickerViewController.swift */,

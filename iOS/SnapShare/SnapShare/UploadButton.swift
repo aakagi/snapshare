@@ -30,13 +30,11 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         self.frame = CGRectMake(0, screenHeight - self.buttonHeight, screenWidth, self.buttonHeight)
         self.backgroundColor = UIColor.blueColor()
         self.setTitle("Upload My Story", forState: UIControlState.Normal)
-        // selectPictures
-        self.addTarget(self, action: "pingServer", forControlEvents: UIControlEvents.TouchUpInside)
+        self.addTarget(self, action: "selectPictures", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
-    
 
-    
+
     func selectPictures() {
         
         let videoPicker = UIImagePickerController()
@@ -44,7 +42,7 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         videoPicker.delegate = self
 
         videoPicker.sourceType = .SavedPhotosAlbum
-        videoPicker.mediaTypes = [kUTTypeMovie as String, kUTTypeImage as String]
+        videoPicker.mediaTypes = [kUTTypeMovie as String]
 
         videoPicker.videoMaximumDuration = 5.0
 
@@ -69,10 +67,12 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
                         let uploadRequest = AWSS3TransferManagerUploadRequest()
                         
                         uploadRequest.body = videoUrl
-                        uploadRequest.key = "testVideo.m4v"
+                        uploadRequest.key = "testVideo1.m4v"
                         uploadRequest.bucket = ApiKeys.S3BucketName
   
-                        self.upload(uploadRequest)
+//                        self.upload(uploadRequest)
+                        
+                        Video.uploadVideo(uploadRequest, result: { () in })
                         
                     }
                     

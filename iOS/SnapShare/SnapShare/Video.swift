@@ -19,6 +19,97 @@ struct Video {
     let reported: Int
     
     
+    
+    static func uploadVideo(uploadRequest: AWSS3TransferManagerUploadRequest, result: () -> Void) {
+        
+        
+        print("http req start")
+        
+        // Create new video object in DB
+        let jsonBody = "{\"snapname\":\"test\"}"
+        let httpRequest = HttpHelper.buildJsonRequest("/videos/user", method: "POST", jsonBody: jsonBody)
+        
+        
+        HttpHelper.sendRequest(httpRequest, result: { (err, res) in
+            print("here2")
+            if res != nil {
+                dispatch_async(dispatch_get_main_queue()) {
+                    let thing = "\(res!["thing"]!)"
+                    
+                    print(thing)
+                    print("here")
+                    
+                    
+                    
+                    
+                    
+                    
+                    let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+                    
+                    print("upload started")
+                    
+                    transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
+                        if let error = task.error {
+                            if error.domain == AWSS3TransferManagerErrorDomain as String {
+                                if let errorCode = AWSS3TransferManagerErrorType(rawValue: error.code) {
+                                    switch (errorCode) {
+                                    case .Cancelled, .Paused:
+                                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                            
+                                        })
+                                        break;
+                                        
+                                    default:
+                                        print("upload() failed: [\(error)]")
+                                        break;
+                                    }
+                                } else {
+                                    print("upload() failed: [\(error)]")
+                                }
+                            } else {
+                                print("upload() failed: [\(error)]")
+                            }
+                        }
+                        
+                        if let exception = task.exception {
+                            print("upload() failed: [\(exception)]")
+                        }
+                        
+                        if task.result != nil {
+                            dispatch_async(dispatch_get_main_queue(), { () in
+                                
+                                print("Success")
+                                print(uploadRequest.key)
+                                
+                            })
+                        }
+                        return nil
+                    }
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("error making http request")
+                }
+            }
+        })
+        
+        
+        result()
+    }
+        
+
+    
+    
     static func fetchVideosFor(type: String, result: (videoArray: [Video], error: String?) -> Void) {
         
         
