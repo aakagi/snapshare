@@ -20,34 +20,34 @@ struct Video {
     
     
     
-    static func uploadVideo(uploadRequest: AWSS3TransferManagerUploadRequest, result: () -> Void) {
+    static func uploadVideo(currentUser: User, uploadRequest: AWSS3TransferManagerUploadRequest, result: () -> Void) {
         
+//        userId: String,
+//        userSnapname: String,
+//        created: Number,
+//        videoUrl: String,
+//        views: Number,
+//        likes: Number,
+//        reported: Number
         
-        print("http req start")
+        let userId = currentUser._id
+        let userSnapname = currentUser.snapname
+        let created = Int(floor(NSDate().timeIntervalSince1970 / 60))
+        print(created)
+        let urlKey = uploadRequest.key!
         
         // Create new video object in DB
-        let jsonBody = "{\"snapname\":\"test\"}"
+        let jsonBody = "{\"userId\":\"\(userId)\",\"userSnapname\":\"\(userSnapname)\",\"created\":\"\(created)\",\"urlKey\":\"\(urlKey)\"}"
+        print(jsonBody)
         let httpRequest = HttpHelper.buildJsonRequest("/videos/user", method: "POST", jsonBody: jsonBody)
         
         
         HttpHelper.sendRequest(httpRequest, result: { (err, res) in
-            print("here2")
+            
             if res != nil {
                 dispatch_async(dispatch_get_main_queue()) {
-                    let thing = "\(res!["thing"]!)"
-                    
-                    print(thing)
-                    print("here")
-                    
-                    
-                    
-                    
-                    
                     
                     let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-                    
-                    print("upload started")
-                    
                     transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
                         if let error = task.error {
                             if error.domain == AWSS3TransferManagerErrorDomain as String {
@@ -60,19 +60,19 @@ struct Video {
                                         break;
                                         
                                     default:
-                                        print("upload() failed: [\(error)]")
+                                        print("upload failed: [\(error)]")
                                         break;
                                     }
                                 } else {
-                                    print("upload() failed: [\(error)]")
+                                    print("upload failed: [\(error)]")
                                 }
                             } else {
-                                print("upload() failed: [\(error)]")
+                                print("upload failed: [\(error)]")
                             }
                         }
                         
                         if let exception = task.exception {
-                            print("upload() failed: [\(exception)]")
+                            print("upload failed: [\(exception)]")
                         }
                         
                         if task.result != nil {
@@ -86,11 +86,6 @@ struct Video {
                         return nil
                     }
 
-                    
-                    
-                    
-                    
-                    
                     
                     
                     

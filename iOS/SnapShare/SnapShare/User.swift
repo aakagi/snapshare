@@ -9,7 +9,8 @@
 import Foundation
 
 struct User {
-
+    
+    let _id: String
     let snapname: String
     let authCode: String
     let name: String
@@ -27,10 +28,11 @@ struct User {
         HttpHelper.sendRequest(httpRequest) { (err, res) in
             if res != nil {
                 dispatch_async(dispatch_get_main_queue()) {
+                    let userId = "\(res!["_id"]!)"
                     let userSnapname = "\(res!["snapname"]!)"
                     let userAuthCode = "\(res!["accessToken"]!)"
                     let userName = "\(res!["name"]!)"
-                    let userResult = User(snapname: userSnapname, authCode: userAuthCode, name: userName)
+                    let userResult = User(_id: userId, snapname: userSnapname, authCode: userAuthCode, name: userName)
                     
                     result(userResult,nil)
                 }

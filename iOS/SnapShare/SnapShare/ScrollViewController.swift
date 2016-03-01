@@ -11,7 +11,7 @@ import UIKit
 class ScrollViewController: UIViewController, UIScrollViewDelegate {
     
     var baseScrollView: UIScrollView!
-    var loggedInUser: User?
+    var currentUser: User?
     
     
     override func viewDidLoad() {
@@ -66,6 +66,8 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         
         let button2 = UploadButton()
         button2.parentVC = View2
+        button2.currentUser = self.currentUser
+        
         
         nav2.frame = CGRectMake(screenWidth * 1, 0, screenWidth, nav2.navHeight)
         View2.view.frame = CGRectMake(screenWidth * 1, nav2.navHeight, screenWidth, screenHeight - button2.buttonHeight)
@@ -86,6 +88,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
         
         let button3 = UploadButton()
         button3.parentVC = View3
+        button3.currentUser = self.currentUser
         
         View3.view.frame = CGRectMake(self.view.frame.width * 2, 0, screenWidth, screenHeight)
 

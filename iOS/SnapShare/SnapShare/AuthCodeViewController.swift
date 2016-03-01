@@ -25,7 +25,7 @@ class AuthCodeViewController: UIViewController {
 //    var actualCode: String?
     var snapname: String?
     
-    var loggedInUser: User?
+    var currentUser: User?
     
     
     // The input display labels
@@ -79,7 +79,7 @@ class AuthCodeViewController: UIViewController {
             else {
                 dispatch_async(dispatch_get_main_queue()) {
 
-                    self.loggedInUser = resultUser!
+                    self.currentUser = resultUser!
                 
                     let userSessionKey: AnyObject = resultUser!.snapname
                 
@@ -129,7 +129,7 @@ class AuthCodeViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destVC = segue.destinationViewController as! ScrollViewController
-        destVC.loggedInUser = self.loggedInUser
+        destVC.currentUser = self.currentUser
         
     }
     

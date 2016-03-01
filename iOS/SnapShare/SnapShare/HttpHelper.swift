@@ -53,7 +53,6 @@ struct HttpHelper {
             if err == nil {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let httpResponse = res as? NSHTTPURLResponse {
-                        print(httpResponse.statusCode)
                         if httpResponse.statusCode == 200 {
                             resDataString = String(data: data!, encoding: NSUTF8StringEncoding)!
                             let resDictionary = HttpHelper.convertJsonStringToDictionary(resDataString!)
@@ -61,11 +60,13 @@ struct HttpHelper {
                             
                         }
                         else {
-                            print(httpResponse)
+                            print(httpResponse.statusCode)
+                            result(err,nil)
                         }
                     }
                     else {
-                        print(res)
+                        print("Fuck this should never show")
+                        result(err,nil)
                     }
                 }
             }
