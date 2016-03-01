@@ -27,6 +27,7 @@ class AuthCodeViewController: UIViewController {
     
     var loggedInUser: User?
     
+    
     // The input display labels
     @IBOutlet weak var codeInput1: UILabel!
     @IBOutlet weak var codeInput2: UILabel!
@@ -39,11 +40,6 @@ class AuthCodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TODO - Get the actual access token and Id from UserSignInViewController
-        
-        
-        
     }
     
     // Triggered when a number is entered
@@ -71,30 +67,38 @@ class AuthCodeViewController: UIViewController {
         }
     }
     
-    // TODO - Move this to User model, again was too lazy to do it properly with closures and shit
+    
     func submitAuthCode(submittedCode: String) {
         
-        User.login(self.snapname!, submittedCode: submittedCode, result: {(resultUser, err) in
-            if err != nil {
-                self.presentError("Please try again.", message: err!)
+        User.login(self.snapname!, submittedCode: submittedCode, result: {(resultUser, errorMessage) in
+            if errorMessage != nil {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.presentError("Please try again.", message: errorMessage!)
+                }
             }
             else {
+                dispatch_async(dispatch_get_main_queue()) {
+
+                    self.loggedInUser = resultUser!
                 
-                self.loggedInUser = resultUser!
-                
-                let userSessionKey: AnyObject = resultUser!.snapname
+                    let userSessionKey: AnyObject = resultUser!.snapname
                 
                 // TODO - Set NSUserDefaults to store session
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                userDefaults.setObject(userSessionKey, forKey: "userSessionKey")
-//                userDefaults.se
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    userDefaults.setObject(userSessionKey, forKey: "userSessionKey")
+                    
+                    self.performSegueWithIdentifier("SegueToMain", sender: self)
+                }
+                
                 
 //                let userSessionKey: AnyObject = defaults.objectForKey("storedUserToken")!
                 
 
                 // NSUserDefaults.standardUserDefaults().setObject(, forKey: "storedUser")
                 
-                self.performSegueWithIdentifier("SegueToMain", sender: self)
+                
+                
+                
             }
         })
         

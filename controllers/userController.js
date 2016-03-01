@@ -35,6 +35,7 @@ module.exports = {
             console.log(newToken);
             res.send({
               _id: doc._id,
+              snapname: doc.snapname,
               accessToken: newToken
             });
           }
@@ -57,8 +58,10 @@ module.exports = {
         }, function(err, docs) {
           if(!err) {
             // sendCode(newToken);
+            console.log(newToken);
             res.send({
               _id: docs._id,
+              snapname: docs.snapname,
               accessToken: newToken
             });
           }

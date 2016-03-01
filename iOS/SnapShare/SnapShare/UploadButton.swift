@@ -30,48 +30,12 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         self.frame = CGRectMake(0, screenHeight - self.buttonHeight, screenWidth, self.buttonHeight)
         self.backgroundColor = UIColor.blueColor()
         self.setTitle("Upload My Story", forState: UIControlState.Normal)
-        self.addTarget(self, action: "openActionSheet", forControlEvents: UIControlEvents.TouchUpInside)
+        // selectPictures
+        self.addTarget(self, action: "pingServer", forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
-    
-    func openActionSheet() {
-        
-        // Creates alert controller
-        let alertController = UIAlertController(
-            title: "Upload Your Snap Story",
-            message: nil,
-            preferredStyle: .ActionSheet)
-        
-        // Select this for uploading a new video
-        let uploadNewVideo = UIAlertAction(
-            title: "Add A New Story",
-            style: .Default) { (action) -> Void in
-                 self.selectPictures()
-        }
-        alertController.addAction(uploadNewVideo)
-        
-        // Select this for updating an old video
-        let updateOldVideo = UIAlertAction(
-            title: "Update Current Story",
-            style: .Default) { (action) -> Void in
-                 self.selectPictures()
-        }
-        alertController.addAction(updateOldVideo)
-        
-        // Cancel
-        let cancelAction = UIAlertAction(
-            title: "Cancel",
-            style: .Cancel) { (action) -> Void in }
-        alertController.addAction(cancelAction)
-        
-        // Present the selection buttons
-        parentVC!.presentViewController(
-            alertController,
-            animated: true) { () -> Void in }
 
-    }
-    
     
     func selectPictures() {
         
@@ -119,6 +83,8 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
     }
     
     
+    // TODO - Move this to Video.swift
+    
     func upload(uploadRequest: AWSS3TransferManagerUploadRequest) {
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         
@@ -152,13 +118,10 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
             }
             
             if task.result != nil {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () in
+                    
+                    print("Success")
                     print(uploadRequest.key)
-                    
-                    // Create new video in DB
-                    // Confirm video upload
-                    
-                    
                     
                 })
             }
@@ -166,5 +129,76 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
         }
     }
     
+    func pingServer() {
+        
+        print("here")
+        
+        // Create new video object in DB
+        let jsonBody = "{\"snapname\":\"test\"}"
+        let httpRequest = HttpHelper.buildJsonRequest("/videos/user", method: "POST", jsonBody: jsonBody)
+        
+        
+        HttpHelper.sendRequest(httpRequest, result: { (err, res) in
+            print("here2")
+            if res != nil {
+                dispatch_async(dispatch_get_main_queue()) {
+                    let thing = "\(res!["thing"]!)"
+                    
+                    print(thing)
+                    print("here")
+                }
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("error making http request")
+                }
+            }
+        })
+    }
+    
 
 }
+
+
+
+/*
+
+// TODO - Add this once updating videos is an option
+
+func openActionSheet() {
+
+// Creates alert controller
+let alertController = UIAlertController(
+title: "Upload Your Snap Story",
+message: nil,
+preferredStyle: .ActionSheet)
+
+// Select this for uploading a new video
+let uploadNewVideo = UIAlertAction(
+title: "Add A New Story",
+style: .Default) { (action) -> Void in
+self.selectPictures()
+}
+alertController.addAction(uploadNewVideo)
+
+// Select this for updating an old video
+let updateOldVideo = UIAlertAction(
+title: "Update Current Story",
+style: .Default) { (action) -> Void in
+self.selectPictures()
+}
+alertController.addAction(updateOldVideo)
+
+// Cancel
+let cancelAction = UIAlertAction(
+title: "Cancel",
+style: .Cancel) { (action) -> Void in }
+alertController.addAction(cancelAction)
+
+// Present the selection buttons
+parentVC!.presentViewController(
+alertController,
+animated: true) { () -> Void in }
+
+}
+*/

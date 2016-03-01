@@ -20,44 +20,55 @@ module.exports = {
       user: userId
     });
   },
-  // req.body = userId, snapname
+  // req.body = userId, snapname, videoUrlKey
   postVideo: function(req, res) {
-    var userId = req.body.userId;
-    var snapname = req.body.snapname;
-    var videoUrl = generateVideoUrl(userId)
+    // var userId = req.body.userId;
+    // var snapname = req.body.snapname;
+    
+    // var videoBaseUrl = generateVideoUrl(userId)
+    // var videoUrl = req.body.videoUrlKey;
 
-    // See if there are any videos posted within the last 6 hours
-    Videos.findOne({
-      created: {
-        $gt: makeTimeStamp() - 360
-      }
-    }, function(err, doc) {
-      if(doc) {
-        res.send("Too early")
-      }
-      else if (!err) {
-        // Create a new video if a video doesn't already exist
-        Videos.create({
-          userId: userId,
-          userSnapname: snapname,
-          created: makeTimeStamp(),
-          videoUrl: videoUrl,
-          views: 0,
-          likes: 0,
-          reported: 0
-        }, function(err, docs) {
-          if(!err) {
-            res.send(docs);
-          }
-          else {
-            res.status(500).send(err);
-          }
-        });
-      }
-      else {
-        res.status(500).send(err);
-      }
-    })
+    console.log("here");
+    console.log(req.body);
+    res.send({
+      thing: "test"
+    });
+
+
+    // // See if there are any videos posted within the last 6 hours
+    // Videos.findOne({
+    //   created: {
+    //     $gt: makeTimeStamp() - 360
+    //   }
+    // }, function(err, doc) {
+    //   if(doc) {
+    //     res.send("Too early")
+    //   }
+    //   else if (!err) {
+    //     // Create a new video if a video doesn't already exist
+    //     Videos.create({
+    //       userId: userId,
+    //       userSnapname: snapname,
+    //       created: makeTimeStamp(),
+    //       videoUrl: videoUrl,
+    //       views: 0,
+    //       likes: 0,
+    //       reported: 0
+    //     }, function(err, docs) {
+    //       if(!err) {
+    //         res.send(docs);
+    //       }
+    //       else {
+    //         res.status(500).send(err);
+    //       }
+    //     });
+    //   }
+    //   else {
+    //     res.status(500).send(err);
+    //   }
+    // })
+
+
   },
   // req.body = userId, snapname
   updateVideo: function(req, res) {

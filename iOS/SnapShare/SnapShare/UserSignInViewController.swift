@@ -15,7 +15,6 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
     // - Programatically show who you will be receiving a snap from
     // - Figure out how to programatically send snaps?
     // - Generate auth codes and get them to me via email
-    // - Actually pass the auth code along to the AuthCodeViewController :(
     // - Create a friendlier color pallette
     // - Change the background color
     // - Find better fonts
@@ -30,9 +29,12 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Start with keyboard open
         keyBoardReadyOnLoad()
         
     }
+    
     func keyBoardReadyOnLoad() {
         snapnameInputField.returnKeyType = UIReturnKeyType.Send
         snapnameInputField.delegate = self
@@ -57,49 +59,35 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
     // TODO - Eventually move to User class, but that's too much for now
     func sendSnap(snapname: String) {
         
-        // Get HttpHelper class
-        let httpHelper = HttpHelper()
-        // Create POST request to /user/login
-        let httpRequest = httpHelper.buildJsonRequest("user/auth", method: "POST")
-        // With body {snapname: snapname} JSON
+        // Create POST request to /user/login with body {snapname: snapname} JSON
         let jsonBody = "{\"snapname\":\"\(snapname)\"}"
-        // Attach JSON
-        httpRequest.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        // TODO - All of this http stuff should be dealt with in User.swift
-        
-        // Send request
-        var resDataString: String?
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(httpRequest) {(data, res, err) in
-            if err == nil {
-                dispatch_async(dispatch_get_main_queue()) {
-                    
-                    // Data successfully received
-                    
-                    // Convert result data to string
-                    resDataString = String(data: data!, encoding: NSUTF8StringEncoding)!
-                    // Make that into a dictionary
-                    let resDictionary = httpHelper.convertJsonStringToDictionary(resDataString!)
-                    // Get the parts of the dictionary and assign them to variables
+        let httpRequest = HttpHelper.buildJsonRequest("/user/auth", method: "POST", jsonBody: jsonBody)
 
-//                    self.generatedCode = "\(resDictionary!["accessToken"]!)"
-                    self.snapname = snapname
+        
+        HttpHelper.sendRequest(httpRequest) { (err, res) in
+            if res != nil {
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    // TODO - Delete accessCode
+                    let accessCode = "\(res!["accessToken"]!)"
                     
-                    print("\(resDictionary!["accessToken"]!)")
-                    print(snapname)
+                    let _id = "\(res!["_id"]!)"
+                    self.snapname = "\(res!["snapname"]!)"
+                    
+                    print(accessCode)
+                    print(_id)
+                    print(self.snapname!)
                     
                     self.performSegueWithIdentifier("GoToCodeVC", sender: self)
-                    
                 }
             }
             else {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.presentError("Error", message: "Something went wrong. Make sure you're connected to the internet, otherwise, I have no clue.")
-                    print(err)
                 }
             }
         }
-        task.resume()
+        
     }
 
     
@@ -123,12 +111,9 @@ class UserSignInViewController: UIViewController, UITextFieldDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        let destVC = segue.destinationViewController as! AuthCodeViewController
-//        destVC.actualCode = sender?.generatedCode!
-        destVC.snapname = sender?.snapname
-        
+        if let destVC = segue.destinationViewController as? AuthCodeViewController {
+            destVC.snapname = sender?.snapname!
+        }
     }
 
 }
