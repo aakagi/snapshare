@@ -30,10 +30,15 @@ struct Video {
 //        likes: Number,
 //        reported: Number
         
+        
         let userId = currentUser._id
         let userSnapname = currentUser.snapname
         let created = Int(floor(NSDate().timeIntervalSince1970 / 60))
         print(created)
+        
+        uploadRequest.key = "\(userId)-\(created).m4v"
+        uploadRequest.bucket = ApiKeys.S3BucketName
+
         let urlKey = uploadRequest.key!
         
         // Create new video object in DB
@@ -49,6 +54,7 @@ struct Video {
                     
                     let transferManager = AWSS3TransferManager.defaultS3TransferManager()
                     transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
+                        
                         if let error = task.error {
                             if error.domain == AWSS3TransferManagerErrorDomain as String {
                                 if let errorCode = AWSS3TransferManagerErrorType(rawValue: error.code) {
@@ -79,7 +85,6 @@ struct Video {
                             dispatch_async(dispatch_get_main_queue(), { () in
                                 
                                 print("Success")
-                                print(uploadRequest.key)
                                 
                             })
                         }

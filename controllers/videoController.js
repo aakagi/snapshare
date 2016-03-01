@@ -39,7 +39,7 @@ module.exports = {
       }
     }, function(err, doc) {
       if(doc) {
-        res.send("Too early")
+        res.status(406).send("Too early")
       }
       else if (!err) {
         // Create a new video if a video doesn't already exist

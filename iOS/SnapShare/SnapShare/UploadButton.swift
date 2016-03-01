@@ -66,9 +66,7 @@ class UploadButton: UIButton, UIImagePickerControllerDelegate, UINavigationContr
                         let uploadRequest = AWSS3TransferManagerUploadRequest()
                         
                         uploadRequest.body = videoUrl
-                        uploadRequest.key = "testVideo1.m4v"
-                        uploadRequest.bucket = ApiKeys.S3BucketName
-  
+                        
                         Video.uploadVideo(currentUser!, uploadRequest: uploadRequest, result: { () in })
                         
                     }
